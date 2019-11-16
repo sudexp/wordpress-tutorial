@@ -23,5 +23,72 @@ In the main window of MAMP click "Open WebStart Page" and in the opened browser 
 4. Fill in the required fields in the window that appears and click "Install WordPress". Note that the "Username" and "Password" fields do not belong to our database, but are created for the customer, who will make changes to the site using the Admin Panel.  
 5. Click "Log In" for final step.
 
+### Theme creating
+Open *wordpress-tutorial* folder in the code editor. In *wp-contents/themes* folder create a new folder named *my_theme*, where you should create 2 files:  
+- style.css (style file)  
+- index.php (start file of the main page).  
 
+The only necessary component of the style.css file to be written in it is the comment and title "Theme Name:"  
+```
+// style.css
+/*
+Theme Name: My Theme
+*/
+```
 
+Index.php file can theoretically be left blank.  
+
+Let's make sure the theme is working now. In the admin panel, go to *Appearance --> Themes* and activate "My Theme", refresh [browser page](http://localhost:8888/wordpress-tutorial/).  
+
+### Update the theme
+Open index.php file and transfer all code from index.html file of the source project into it [static_html](https://drive.google.com/file/d/1vGYTx8QHWuXU-vbwwcpN0oCM-46t6zmC/view?usp=sharing).  
+
+Create a new folder inside the *my-theme*, where you can transfer all other folders and files of the source project: *fonts*, *img*, *js* and *styles*.  
+
+#### Adding styles and scripts dynamically
+Copy the contents of *assets/styles/main.css* file to *my_theme/stylle.css* file.  
+Add to the end of hеad index.php following code:  
+```
+// index.php
+<?php
+  wp_head()
+?>
+```
+
+Замените код *<script src="./js/main.js" defer></script>* в конце body на следующий:  
+```
+// index.php
+<?php
+  wp_head()
+?>
+```
+
+Create *functions.php* file in *my_theme* directory:  
+```
+// functions.php
+<?php
+  add_action('wp_enqueue_scripts', 'my_styles');
+  add_action('wp_enqueue_scripts', 'my_scripts');
+
+  // styles adding
+  function my_styles() {
+    wp_enqueue_style('my_style', get_stylesheet_uri());
+    // wp_enqueue_style( 'header_style', get_template_directory_uri() . '/assets/styles/main.css');
+    // wp_enqueue_style( 'animate_style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css');
+  }
+
+  // scripts adding
+  function my_scripts() {
+    wp_enqueue_script('my_scripts', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
+  }
+?>
+```
+
+#### Adding images and fonts
+In index.php replace all incorrect urls *./img* with the current theme's url *<?php echo bloginfo('template_url'); ?>/assets/img*.  
+
+In style.css replace all urls *../img* with url *assets/img* and all fonts *../fonts* with url *assets/fonts*.  
+
+*Tip:* use the search and replacement features of the code editor.
+
+Update the [site page](http://localhost:8888/wordpress-tutorial/) and make sure it is fully functional.
