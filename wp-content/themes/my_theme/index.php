@@ -327,7 +327,7 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="products__alert">
-              <span>Didn't find what you were looking for?</span> Eget gravida
+              <span>Didn't find what you are looking for?</span> Eget gravida
               cum sociis natoque. Elementum nibh tellus molestie nunc. Viverra
               nibh cras pulvinar mattis nunc sed. In metus vulputate eu
               scelerisque felis imperdiet proin.
@@ -1309,3 +1309,36 @@
 <?php
   get_footer();
 ?>
+
+<!-- Testing some hooks (https://wp-kama.ru/hooks):
+<?php
+  function print_hello($text, $name) {
+    echo 'Hello' . ' ' . $text . ' ' . $name . '!<br>';
+  };
+
+  function print_goodbye() {
+    echo 'And goodbye!' . '<br>';
+  };
+
+  function print_wooow() {
+    echo 'Wooow!' . ' ';
+  };
+
+  add_action('my_hook', 'print_hello', 10, 2);
+  add_action('my_hook', 'print_goodbye', 15);
+  add_action('my_hook', 'print_wooow', 5);
+
+  do_action('my_hook', 'dear customer', 'Dima');
+
+  // remove_action()
+
+  function my_filter_function ($str) {
+    return 'This is ' . $str;
+  };
+
+  add_filter('my_filter', 'my_filter_function', 15);
+
+  echo apply_filters( 'my_filter', 'FILTER' );
+
+  remove_filter('my_filter', 'my_filter_function', 15)
+?> -->
