@@ -28,7 +28,7 @@ Open *wordpress-tutorial* folder in the code editor. In *wp-contents/themes* fol
 - style.css (style file)  
 - index.php (start file of the main page).  
 
-The only necessary component of the style.css file to be written in it is the comment and title "Theme Name:"  
+The only necessary component of the style.css file to be written in it is the comment with a title "Theme Name:". Add it to this file:  
 ```
 // style.css
 /*
@@ -55,11 +55,11 @@ Add to the end of hеad index.php following code:
 ?>
 ```
 
-Замените код *<script src="./js/main.js" defer></script>* в конце body на следующий:  
+Replace the code *<script src="./js/main.js" defer></script>* at the end of body tag with the following:  
 ```
 // index.php
 <?php
-  wp_head()
+  wp_footer();
 ?>
 ```
 
@@ -86,9 +86,28 @@ Create *functions.php* file in *my_theme* directory:
 
 #### Adding images and fonts
 In index.php replace all incorrect urls *./img* with the current theme's url *<?php echo bloginfo('template_url'); ?>/assets/img*.  
-
 In style.css replace all urls *../img* with url *assets/img* and all fonts *../fonts* with url *assets/fonts*.  
 
-*Tip:* use the search and replacement features of the code editor.
+*Tip:* use the search and replacement features of the code editor.  
 
-Update the [site page](http://localhost:8888/wordpress-tutorial/) and make sure it is fully functional.
+Update the [page](http://localhost:8888/wordpress-tutorial/) in browser and make sure it is fully functional.  
+
+### Formation of the correct page structure
+
+#### Header
+In directory *my_theme* create a new file *header.php*, which will contain all the code located in the site header. In the main *index.php* theme file, select and cut out the entire part of the code above *<div class="mainslider glide">* and paste it into the created *header.php*. At the beginning of *index.php* file, instead of the lost part, insert the following header connection code:  
+```
+// index.php
+<?php
+  get_header();
+?>
+```
+
+#### Footer
+Similar to the above, create a new file *footer.php*, which will contain all the code located in the site footer. In  *index.php* select and cut out the entire part of the code below *<div class="question">* (include it) and paste it into the created *footer.php*. At the end of *index.php* file, instead of the lost part, similarly  insert the following header connection code:  
+```
+// index.php
+<?php
+  get_header();
+?>
+```
