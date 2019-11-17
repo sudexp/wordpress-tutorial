@@ -562,7 +562,7 @@
               <div class="footer__social-item">
                 We're on social media:
               </div>
-              <a href="#" class="footer__social-item">
+              <a href="<?php the_field('instagram', 2); ?>" class="footer__social-item">
                 <svg
                   width="23"
                   height="23"
@@ -584,7 +584,7 @@
                   />
                 </svg>
               </a>
-              <a href="#" class="footer__social-item">
+              <a href="<?php the_field('facebook', 2); ?>" class="footer__social-item">
                 <svg
                   width="13"
                   height="24"
@@ -598,7 +598,7 @@
                   />
                 </svg>
               </a>
-              <a href="#" class="footer__social-item">
+              <a href="<?php the_field('youtube', 2); ?>" class="footer__social-item">
                 <svg
                   width="29"
                   height="29"
@@ -623,8 +623,8 @@
                   class="footer__contacts-logo"
                 />
                 <div class="footer__contacts-tel">
-                  <a href="tel:+358400000000">+358400000000</a>
-                  <a href="tel:+358500000000">+358500000000</a>
+                  <a href="<?php the_field('phone_1', 2); ?>" class="header__contacts-tel"><?php the_field('phone_1', 2); ?></a>
+                  <a href="<?php the_field('phone_2', 2); ?>" class="header__contacts-tel"><?php the_field('phone_2', 2); ?></a>
                 </div>
               </div>
               <div class="footer__contacts-item">

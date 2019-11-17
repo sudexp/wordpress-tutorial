@@ -156,23 +156,25 @@
         <div class="row">
           <div class="col-md-10 offset-md-1 col-lg-5 offset-lg-1">
             <div class="about__img">
-              <img src="<?php echo bloginfo('template_url'); ?>/assets/img/about.jpg" alt="about company" />
+              <!-- <img src="<?php echo the_field('about_img'); ?>" alt="about_company"> -->
+              <?php
+                $image = get_field('image');
+                if (!empty($image)): ?>
+                  <img
+                  src="<?php echo $image['url']; ?>"
+                  alt="<?php echo $image['alt']; ?>">
+                <?php endif;
+                print_r($image);
+              ?>
             </div>
           </div>
           <div
             class="col-md-10 offset-md-1 offset-lg-0 col-lg-6 col-xl-5 offset-xl-1"
           >
-            <h1 class="title underlined">About the company</h1>
-            <div class="about__text">
-              Our company has been giving positive emotions for more than ten
-              years! We embody all your dreams and help to find happiness!
-              <br />
-              <br />
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </div>
+            <h1 class="title underlined"><?php the_field('сompany_title'); ?></h1>
+              <div class="about__text">
+                <?php the_field('company_description'); ?>
+              </div>
             <a href="#" class="button">Learn more</a>
           </div>
         </div>
@@ -183,7 +185,15 @@
         <div class="title">Our team</div>
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
-            <img class="specialists__img" src="<?php echo bloginfo('template_url'); ?>/assets/img/team.jpg" alt="our team" />
+            <?php
+              $image = get_field('team_image');
+              if (!empty($image)): ?>
+                  <img 
+                  src="<?php echo $image['url']; ?>" 
+                  alt="<?php echo $image['alt']; ?>"
+                  class="specialists__img">
+              <?php endif;
+            ?>
           </div>
         </div>
       </div>
@@ -327,10 +337,8 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="products__alert">
-              <span>Didn't find what you are looking for?</span> Eget gravida
-              cum sociis natoque. Elementum nibh tellus molestie nunc. Viverra
-              nibh cras pulvinar mattis nunc sed. In metus vulputate eu
-              scelerisque felis imperdiet proin.
+              <span>Didn't find what you are looking for?</span> 
+              <?php the_field('text_alert'); ?>
             </div>
           </div>
         </div>
@@ -343,7 +351,7 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="subtitle">
-              It all began with a desire
+              <?php the_field('title_1'); ?>
             </div>
             <div class="aboutus__text">
               Morbi leo urna molestie at elementum. Nulla pharetra diam sit
@@ -358,28 +366,36 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <img class="aboutus__img" src="<?php echo bloginfo('template_url'); ?>/assets/img/about_1.jpg" alt="company" />
+            <?php
+              $image = get_field('image_1');
+              if (!empty($image)): ?>
+                <img
+                src="<?php echo $image['url']; ?>"
+                alt="<?php echo $image['alt']; ?>">
+              <?php endif;
+              print_r($image);
+            ?>
           </div>
         </div>
 
         <div class="row">
           <div class="col-lg-6">
-            <img class="aboutus__img" src="<?php echo bloginfo('template_url'); ?>/assets/img/about_2.jpg" alt="company" />
+            <?php
+              $image = get_field('image_2');
+              if (!empty($image)): ?>
+                <img
+                src="<?php echo $image['url']; ?>"
+                alt="<?php echo $image['alt']; ?>">
+              <?php endif;
+              print_r($image);
+            ?>alt="company" />
           </div>
           <div class="col-lg-6">
             <div class="subtitle">
-              The main thing is quality.
+              <?php the_field('title_2'); ?>
             </div>
             <div class="aboutus__text">
-              Et netus et malesuada fames ac turpis. Nunc pulvinar sapien et
-              ligula ullamcorper. A scelerisque purus semper eget duis at
-              tellus. Sed egestas egestas fringilla phasellus faucibus
-              scelerisque eleifend donec pretium. Sed ullamcorper morbi
-              tincidunt ornare massa eget.
-              <br /><br />
-              Nunc sed blandit libero volutpat sed cras. Est sit amet facilisis
-              magna. Sagittis nisl rhoncus mattis rhoncus urna neque viverra
-              justo nec. Placerat vestibulum lectus mauris ultrices.
+              <?php the_field('description_2'); ?>
             </div>
           </div>
         </div>
@@ -387,21 +403,22 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="subtitle">
-              Modern technologies
+              <?php the_field('title_2'); ?>
             </div>
             <div class="aboutus__text">
-              Tempus iaculis urna id volutpat lacus laoreet non curabitur.
-              Egestas egestas fringilla phasellus faucibus scelerisque eleifend
-              donec. Purus in mollis nunc sed id semper. Vel pharetra vel turpis
-              nunc eget lorem. Non enim praesent elementum facilisis leo vel.
-              <br /><br />
-              In mollis nunc sed id semper risus in hendrerit. Magnis dis
-              parturient montes nascetur ridiculus. Nisl suscipit adipiscing
-              bibendum est ultricies.
+              <?php the_field('description_3'); ?>
             </div>
           </div>
           <div class="col-lg-6">
-            <img class="aboutus__img" src="<?php echo bloginfo('template_url'); ?>/assets/img/about_3.jpg" alt="company" />
+            <?php
+              $image = get_field('image_3');
+              if (!empty($image)): ?>
+                <img
+                src="<?php echo $image['url']; ?>"
+                alt="<?php echo $image['alt']; ?>">
+              <?php endif;
+              print_r($image);
+            ?>alt="company" />
           </div>
         </div>
       </div>
@@ -413,10 +430,7 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="contacts__descr underlined">
-              We are in Jyväskylä, augue ut lectus arcu bibendum at varius vel.
-              <br />
-              <br />
-              Piippukatu 2, Jyväskylä, 40340
+              <?php the_field('address'); ?>
             </div>
           </div>
           <div class="col-lg-6">
@@ -577,7 +591,7 @@
                         </linearGradient>
                       </defs>
                     </svg>
-                    <a href="tel:+358400000000">+358400000000</a>
+                    <a href="<?php the_field('phone_1', 2); ?>" class="header__contacts-tel"><?php the_field('phone_1', 2); ?></a>
                   </div>
                 </div>
                 <div class="contacts__phoneblock">
@@ -713,13 +727,13 @@
                         </linearGradient>
                       </defs>
                     </svg>
-                    <a href="tel:+358500000000">+358500000000</a>
+                    <a href="<?php the_field('phone_2', 2); ?>" class="header__contacts-tel"><?php the_field('phone_2', 2); ?></a>
                   </div>
                 </div>
               </div>
               <div class="contacts__mail">
                 Or e-mail us
-                <a href="mailto:sudexp@icloud.com">sudexp@icloud.com</a>
+                <a href="<?php the_field('email', 2); ?>" class="header__contacts-mail"><?php the_field('email', 2); ?></a>
               </div>
             </div>
           </div>

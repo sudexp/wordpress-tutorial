@@ -114,7 +114,7 @@ Similar to the above, create a new file *footer.php*, which will contain all the
 
 ### Setting up dynamic site changing from dashboard
 #### Logo
-Для добавления логотипа к dashboard вставьте следующий код в конец файла *functions.php*:  
+To add a logo to the dashboard, insert the following code at the end of the *functions.php* file:  
 ```
 // functions.php
 add_theme_support('custom-logo');
@@ -148,3 +148,177 @@ Change the content of the title tag:
 ```
 
 Now you can change Site Title and Tagline in *Dashboard --> Appearance --> Customize --> Site Indentify*  
+
+### Configuring custom fields
+#### Creating tabs
+*Field Groups --> About company --> Field Type = Tab --> Field Label = General information --> Update*  
+*Field Groups --> About company --> Field Type = Tab --> Field Label = Some information --> Update*  
+Move mouse over number 4 and drag this field up the section.  
+
+Now, when you switch *Pages --> Main Page*, you can use the tabs, which is quite convenient.  
+
+#### Title, description and image
+Add a new plugin *Advanced Custom Fields*:  
+*Dashboard --> Plugins --> Add new --> Advanced Custom Fields + Install + Activate*  
+
+After that, a new Custom Fields plugin appeared in the side menu.  
+*Custom Firlds --> Add New --> Add Title = About Company --> Location --> Show this field group if = Page Type + is equal to + Front Page --> Add Field --> Field Label = Сompany title --> Field Name = сompany_title --> Field Type = Text --> Instructions = Enter the title (max 30 characters) --> Required? = Yes --> Character Limit = 30 --> Add Field --> Field Label = Company description --> Field Name = company_description --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add <br> --> Add Field --> Field Label = Image --> Field Name = image --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Update*  
+
+*Settings --> Reading --> Your homepage displays = A static page (select below) --> Homepage: = Sample Page --> Save Changes*  
+
+*Pages --> Sample Page = Main Page + remove all blocks --> Сompany title = About our company --> Company description = Our company has been giving positive emotions... (from *<div class="about__text">*) --> Add Image --> Upload Files --> Select Files = img/about.jpg --> Alt Text = About Company --> Select --> Update*  
+
+Replace the code inside *<h1 class="title underlined">* with the next one:  
+```
+// index.php
+<h1 class="title underlined"><?php the_field('сompany_title'); ?></h1>
+```
+
+And the code inside *<div class="about__text">* on it:  
+```
+// index.php
+<?php the_field('company_description'); ?>
+```
+
+Replace the code for the image *<div class="about__img">*:  
+```
+// index.php
+<?php
+  $image = get_field('image');
+  if (!empty($image)): ?>
+    <img
+    src="<?php echo $image['url']; ?>"
+    alt="<?php echo $image['alt']; ?>">
+  <?php endif;
+  print_r($image);
+?>
+```
+
+#### General information
+##### Email
+*Custom Fields --> Add New --> Add Title = General information --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Email --> Field Name = email --> Field Type = Text --> Required? = Yes --> Publish*  
+
+Changing the content *<div class="header__contacts">*:  
+```
+// header.php
+<a href="<?php the_field('email', 2); ?>" class="header__contacts-mail"><?php the_field('email', 2); ?></a>
+```
+
+Changing the content *<div class="contacts__mail">*:  
+```
+// index.php
+<a href="<?php the_field('email', 2); ?>" class="contacts__mail"><?php the_field('email', 2); ?></a>
+```
+
+*Pages --> Main Page --> General information --> Email = sudexp@icloud.com --> Update*  
+
+##### Phones
+*Custom Fields --> General information --> Add Field --> Field Label = Phone 1 --> Field Name = phone_1 --> Field Type = Text --> Required? = Yes --> Update*  
+*Custom Fields --> General information --> Add Field --> Field Label = Phone 2 --> Field Name = phone_2 --> Field Type = Text --> Required? = Yes --> Update*  
+
+Changing the content *<div class="header__contacts-tel">*:  
+```
+// header.php
+<a href="<?php the_field('phone_1', 2); ?>" class="header__contacts-tel"><?php the_field('phone_1', 2); ?></a>
+<a href="<?php the_field('phone_2', 2); ?>" class="header__contacts-tel"><?php the_field('phone_2', 2); ?></a>
+```
+
+Similarly, change the tags *<a>* with phone numbers in index.php and footer.php files:  
+```
+// index.php, footer.php
+<a href="<?php the_field('phone_1', 2); ?>" class="header__contacts-tel"><?php the_field('phone_1', 2); ?></a>
+<a href="<?php the_field('phone_2', 2); ?>" class="header__contacts-tel"><?php the_field('phone_2', 2); ?></a>
+```
+
+*Pages --> Main Page --> General information --> Phone 1 = +358400000000 --> Update*  
+*Pages --> Main Page --> General information --> Phone 2 = +358500000000 --> Update*  
+
+##### Social media
+*Custom Fields --> General information --> Add Field --> Field Label = Instagram --> Field Name = instagram --> Field Type = Text --> Required? = Yes --> Update*  
+*Custom Fields --> General information --> Add Field --> Field Label = Facebook --> Field Name = facebook --> Field Type = Text --> Required? = Yes --> Update*  
+*Custom Fields --> General information --> Add Field --> Field Label = Youtube --> Field Name = youtube --> Field Type = Text --> Required? = Yes --> Update*  
+
+Change all tags *<a>* to *<div class="footer__social">*:  
+```
+// footer.php
+<a href="<?php the_field('instagram', 2); ?>" class="footer__social-item">
+<a href="<?php the_field('facebook', 2); ?>" class="footer__social-item">
+<a href="<?php the_field('youtube', 2); ?>" class="footer__social-item">
+```
+
+*Pages --> Main Page --> General information --> Instagram = Instagram --> Update*  
+*Pages --> Main Page --> General information --> Facebook = Facebook --> Update*  
+*Pages --> Main Page --> General information --> Youtube = Youtube --> Update*  
+
+#### Our team
+We will also create a possibility to replace the team image through the dashboard:  
+*Custom Fields --> Add New --> Add Title = Our team --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Team Image --> Field Name = team_image --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Publish*  
+
+Replace <img> tag with *specialists__img* class with the next one:  
+```
+// index.php
+<?php
+  $image = get_field('team_image');
+  if (!empty($image)): ?>
+    <img
+    src="<?php echo $image['url']; ?>"
+    alt="<?php echo $image['alt']; ?>">
+  <?php endif;
+  print_r($image);
+?>
+```
+
+*Pages --> Main Page --> Our team --> Add Image --> Upload Files --> Select Files = img/about_1.jpg --> Update*  
+
+#### Alert
+*Custom Fields --> Add New --> Add Title = Alert --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Text Alert --> Field Name = text_alert --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add <br> --> Publish*  
+
+Replace the code inside *<div class="products__alert">* with the next one:  
+```
+// index.php
+<?php the_field('text_alert'); ?>
+```
+
+*Pages --> Main Page --> Alert --> Text Alert = Eget gravida cum sociis natoque. Elementum nibh tellus molestie nunc. Viverra nibh cras pulvinar mattis nunc sed. In metus vulputate eu scelerisque felis imperdiet proin. --> Update*  
+
+#### Our History
+In the same way we replace the headings, text fields and images of this section of the site. For example, I will give you a sequence of actions for one of the blocks:  
+
+*Custom Fields --> Add New --> Add Title = Our history --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Title 1 --> Field Name = title_1 --> Field Type = Text --> Required? = Yes --> Publish*  
+*Custom Fields --> Our history --> Add Field --> Field Label = Description 1 --> Field Name = description_1 --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add <br> --> Update*  
+*Custom Fields --> Our history --> Add Field --> Field Label = Image 1 --> Field Name = image_1 --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Update*  
+
+Replace the code inside *<div class="subtitle">*:  
+```
+// index.php
+<?php the_field('title_1'); ?>
+```
+
+Replace the code inside *<div class="aboutus__text">*:  
+```
+// index.php
+<?php the_field('description_1'); ?>
+```
+
+Replace *<img class="aboutus__img" src="<?php echo bloginfo('template_url'); ?>/assets/img/about_1.jpg" alt="company" />*:  
+```
+// index.php
+<?php
+  $image = get_field('image_1');
+  if (!empty($image)): ?>
+    <img
+    src="<?php echo $image['url']; ?>"
+    alt="<?php echo $image['alt']; ?>">
+  <?php endif;
+  print_r($image);
+?>
+```
+
+*Pages --> Main Page --> Our history --> Title 1 = IT ALL BEGAN WITH A DESIRE --> Update*  
+*Pages --> Main Page --> Our history --> Description 1 = Morbi leo urna molestie at elementum. Nulla pharetra diam sit amet. Augue interdum velit euismod in pellentesque massa placerat.*
+*Vel eros donec ac odio tempor orci dapibus ultrices in. Blandit massa enim nec dui nunc. Dolor sit amet consectetur adipiscing elit. Porttitor massa id neque aliquam vestibulum. Ac turpis egestas maecenas pharetra convallis posuere morbi leo. Nibh tellus molestie nunc non blandit massa enim nec dui. Enim facilisis gravida neque convallis. --> Update*  
+*Pages --> Main Page --> Our history --> Image 1 --> Add Image --> Upload Files --> Select Files = img/about_1.jpg --> Update*  
+
+*Tip:* Use the "duplicate" option for similar fields.  
+
+
