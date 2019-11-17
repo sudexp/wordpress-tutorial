@@ -93,7 +93,6 @@ In style.css replace all urls *../img* with url *assets/img* and all fonts *../f
 Update the [page](http://localhost:8888/wordpress-tutorial/) in browser and make sure it is fully functional.  
 
 ### Formation of the correct page structure
-
 #### Header
 In directory *my_theme* create a new file *header.php*, which will contain all the code located in the site header. In the main *index.php* theme file, select and cut out the entire part of the code above *div class="mainslider glide"* and paste it into the created *header.php*. At the beginning of *index.php* file, instead of the lost part, insert the following header connection code:  
 ```
@@ -138,6 +137,7 @@ And similarly:
 
 Check that the logo is now available for adding to the site:  
 *Dashboard --> Appearance --> Customize --> Site Indentify*  
+
 Click "Select logo" --> "Select files" and choose *img/logo.png*. Add *Alt Text* as, for example, "logo" and click "Select". Now and in the future, remember to press the *Publish* button on the dashboard.  
 
 #### Title
@@ -152,7 +152,8 @@ Now you can change Site Title and Tagline in *Dashboard --> Appearance --> Custo
 ### Configuring custom fields
 #### Creating tabs
 *Field Groups --> About company --> Field Type = Tab --> Field Label = General information --> Update*  
-*Field Groups --> About company --> Field Type = Tab --> Field Label = Some information --> Update*  
+*Field Groups --> About company --> Field Type = Tab --> Field Label = Some information --> Update* 
+
 Move mouse over number 4 and drag this field up the section.  
 
 Now, when you switch *Pages --> Main Page*, you can use the tabs, which is quite convenient.  
@@ -162,6 +163,7 @@ Add a new plugin *Advanced Custom Fields*:
 *Dashboard --> Plugins --> Add new --> Advanced Custom Fields + Install + Activate*  
 
 After that, a new Custom Fields plugin appeared in the side menu.  
+
 *Custom Fields --> Add New --> Add Title = About Company --> Location --> Show this field group if = Page Type + is equal to + Front Page --> Add Field --> Field Label = Сompany title --> Field Name = сompany_title --> Field Type = Text --> Instructions = Enter the title (max 30 characters) --> Required? = Yes --> Character Limit = 30 --> Add Field --> Field Label = Company description --> Field Name = company_description --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add br --> Add Field --> Field Label = Image --> Field Name = image --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Update*  
 
 *Settings --> Reading --> Your homepage displays = A static page (select below) --> Homepage: = Sample Page --> Save Changes*  
@@ -214,6 +216,7 @@ Changing the content *div class="contacts__mail"*:
 
 ##### Phones
 *Custom Fields --> General information --> Add Field --> Field Label = Phone 1 --> Field Name = phone_1 --> Field Type = Text --> Required? = Yes --> Update*  
+
 *Custom Fields --> General information --> Add Field --> Field Label = Phone 2 --> Field Name = phone_2 --> Field Type = Text --> Required? = Yes --> Update*  
 
 Changing the content *div class="header__contacts-tel"*:  
@@ -235,7 +238,9 @@ Similarly, change the tags *a* with phone numbers in index.php and footer.php fi
 
 ##### Social media
 *Custom Fields --> General information --> Add Field --> Field Label = Instagram --> Field Name = instagram --> Field Type = Text --> Required? = Yes --> Update*  
+
 *Custom Fields --> General information --> Add Field --> Field Label = Facebook --> Field Name = facebook --> Field Type = Text --> Required? = Yes --> Update*  
+
 *Custom Fields --> General information --> Add Field --> Field Label = Youtube --> Field Name = youtube --> Field Type = Text --> Required? = Yes --> Update*  
 
 Change all tags *a* to *div class="footer__social"*:  
@@ -251,7 +256,8 @@ Change all tags *a* to *div class="footer__social"*:
 *Pages --> Main Page --> General information --> Youtube = Youtube --> Update*  
 
 #### Our team
-We will also create a possibility to replace the team image through the dashboard:  
+Also create a possibility to replace the team image through the dashboard:  
+
 *Custom Fields --> Add New --> Add Title = Our team --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Team Image --> Field Name = team_image --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Publish*  
 
 Replace *img class="specialists__img"* with the next one:  
@@ -285,7 +291,9 @@ Replace the code inside *div class="products__alert"* with the next one:
 In the same way we replace the headings, text fields and images of this section of the site. For example, I will give you a sequence of actions for one of the blocks:  
 
 *Custom Fields --> Add New --> Add Title = Our history --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Title 1 --> Field Name = title_1 --> Field Type = Text --> Required? = Yes --> Publish*  
+
 *Custom Fields --> Our history --> Add Field --> Field Label = Description 1 --> Field Name = description_1 --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add br --> Update*  
+
 *Custom Fields --> Our history --> Add Field --> Field Label = Image 1 --> Field Name = image_1 --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Update*  
 
 Replace the code inside *div class="subtitle"*:  
@@ -315,8 +323,10 @@ Replace *img class="aboutus__img" src="<?php echo bloginfo('template_url'); ?>/a
 ```
 
 *Pages --> Main Page --> Our history --> Title 1 = IT ALL BEGAN WITH A DESIRE --> Update*  
+
 *Pages --> Main Page --> Our history --> Description 1 = Morbi leo urna molestie at elementum. Nulla pharetra diam sit amet. Augue interdum velit euismod in pellentesque massa placerat.*
 *Vel eros donec ac odio tempor orci dapibus ultrices in. Blandit massa enim nec dui nunc. Dolor sit amet consectetur adipiscing elit. Porttitor massa id neque aliquam vestibulum. Ac turpis egestas maecenas pharetra convallis posuere morbi leo. Nibh tellus molestie nunc non blandit massa enim nec dui. Enim facilisis gravida neque convallis. --> Update*  
+
 *Pages --> Main Page --> Our history --> Image 1 --> Add Image --> Upload Files --> Select Files = img/about_1.jpg --> Update*  
 
 *Tip:* Use the "duplicate" option for similar fields.  
@@ -333,11 +343,9 @@ Add new Posts:
 *Posts --> Add new --> Add title = Goods for all tastes --> Categories = Slider --> Publish*  
 *Posts --> Add new --> Add title = Always with you --> Categories = Slider --> Publish*  
 *Posts --> Add new --> Add title = Product 1 --> Categories = Product line 1 --> Publish*  
-*Posts --> Add new --> Add title = Product 2 --> Categories = Product line 1 --> Publish*  
-...
-*Posts --> Add new --> Add title = Product 8 --> Categories = Product line 2 --> Publish*  
+...  
 *Posts --> Add new --> Add title = Product 9 --> Categories = Product line 2 --> Publish*  
-...
+...  
 *Posts --> Add new --> Add title = Feedback 3 --> Categories = Feedback --> Publish*  
 
 Change the settings for permanent links:
@@ -415,8 +423,11 @@ Inside tag *ul class="glide__slides "* place the following code:
 ```
 
 *Custom Fields --> Add New --> Add Title = Slider --> Location --> Show this field group if = Post Category + is equal to + Slider --> Add field --> Field Label = Slider image --> Field Name = slider_image --> Field Type = Image --> Required? = Yes --> Return Format = Image URL --> Publish*  
+
 *Add field --> Field Label = Text Color --> Field Name = text_color --> Field Type = Radio Button --> Required? = Yes --> Choices = white, dark --> Update*  
+
 *Add field --> Field Label = Button --> Field Name = slider_button --> Field Type = Radio Button --> Required? = Yes --> Choices = on, off --> Update*  
+
 *Add field --> Field Label = Resource Link --> Field Name = resource_link --> Field Type = Text --> Required? = Yes --> Conditional Logic = Yes --> Show this field if = Button + Value is equal to + on --> Update*  
 
 Change part of the previous code as follows:  
@@ -428,9 +439,9 @@ Change part of the previous code as follows:
 >
 ...
 <div class="col-lg-7 offset-1">
-  <h2 
+  <h2
   style="
-  <?php 
+  <?php
     $field = get_field('text_color');
     if ($field == 'white') {
       ?>
@@ -440,7 +451,7 @@ Change part of the previous code as follows:
   ?>
   "
   class="slider__title"><?php the_title() ?></h2>
-  <?php 
+  <?php
     $field = get_field('slider_button');
     if ($field == 'on') {
       ?>
@@ -452,9 +463,11 @@ Change part of the previous code as follows:
 ```
 
 Fill in the slides that we have with different parameters on the example of one of them:  
+
 *Posts --> Dreams Come True --> Add image --> Upload Image --> Select Files --> img/bg_1 --> Select --> Text Color = dark --> Button = on --> Resourse Link = https://github.com/sudexp/wordpress-tutorial --> Update*  
 
 Remove all other code for static slides from index.php, you won't need it anymore - all sliders are displayed as posts dynamically.  
+
 In the same way change feedback sliders at the bottom of the page.  
 
 #### Products
@@ -509,7 +522,80 @@ Inside the tag *div class="products__wrapper "* insert the following code:
 ```
 
 Fill all products through the dashboard:  
+
 *Posts --> Product 1 --> Product Description = Erat imperdiet sed euismod nisi porta. Tempus urna et pharetra pharetra massa massa ultricies mi quis. --> Set featured  image --> Upload Files --> Select Files --> img/product_1.jpg --> Update*  
 
 In the same way, dynamically change Product Line 2.  
+
 Finally, remove unnecessary code with static products.  
+
+### Working with forms
+Install and activate Contact Form 7 plugin:  
+
+*Plugins --> Add New --> Contact Form 7 --> Install Now --> Activate*
+*Contact --> Contact Form 1 --> Title = Feedback form*
+
+In the *Form* tab, replace the default code with this one:  
+```
+// Form
+<label for="feedname">Your name<span>*</span></label>
+<label for="feedtext">Your feedback<span>*</span></label>
+<button class="minibutton">Send</button>
+```
+
+Click *text* and set the following values:  
+
+*Field Type = Required*  
+*Name = feedname*  
+*Id attribute = feedname*  
+
+Click *Insert Tag*.  
+
+Click *text area* and set the following values:  
+
+*Field Type = Required*  
+*Name = feedtext*  
+*Id attribute = feedtext*  
+
+Click *Insert Tag*.  
+
+If your form code should look like this, click *Save*:  
+```
+// Form
+<label for="feedname">Your name<span>*</span></label>[text* feedname id:feedname]
+<label for="feedtext">Your feedback<span>*</span></label>[textarea* feedtext id:feedtext]
+<button class="minibutton">Send</button>
+```
+
+Click the *Mail* tab and change the following fields:  
+
+*Subject = Letter from the website "Company Portfolio Page"*
+*Additional Headers = (empty)*
+
+*Message Boody:*
+
+```
+From: [feedname]
+Subject: Feedback
+
+Message Body:
+[feedtext]
+
+--
+This e-mail was sent from a contact form on Company Portfolio Page (http://localhost:8888/wordpress-tutorial)
+```
+
+*Use HTML content type = check*  
+
+Save it and click the *Messages* edit messages used in various situations to your choice.  
+
+Finally save all changes on the page using the *Save* button in the upper right corner, copy shortcode and paste it into *index.php* instead of *form class="contacts__feed"*:  
+
+```
+// index.php
+<div class="contacts__feed">
+  <?php echo do_shortcode('[contact-form-7 id="161" title="Feedback form"]'); ?>
+</div>
+```
+
+In a similar way, change form of the tooltip.  

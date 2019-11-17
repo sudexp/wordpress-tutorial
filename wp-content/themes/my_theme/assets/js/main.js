@@ -13330,7 +13330,7 @@
           }).then(function() {
             o.querySelector(".lds-spinner").style.display = "none", o.querySelector(".confirm").style.display = "inline-block";
             var t = document.createElement("div");
-            t.style.color = "green", t.style.marginTop = "10px", t.textContent = ".contactpage__feed" === i ? "Спасибо за отзыв и ваше доверие!" : "Спасибо, мы скоро с вами свяжемся", o.appendChild(t), o.querySelectorAll("input").forEach(function(t) {
+            t.style.color = "green", t.style.marginTop = "10px", t.textContent = ".contactpage__feed" === i ? "Thank you for your feedback and your trust!" : "Thank you, we'll be in touch soon.", o.appendChild(t), o.querySelectorAll("input").forEach(function(t) {
               t.value = ""
             }), o.querySelectorAll("textarea").forEach(function(t) {
               t.value = ""
@@ -13339,7 +13339,7 @@
             }, 1e4)
           }).catch(function() {
             var t = document.createElement("div");
-            t.style.color = "red", t.style.marginTop = "10px", t.textContent = "Что-то пошло не так, попробуйте, пожалуйста, позже", o.appendChild(t), o.querySelector(".lds-spinner").style.display = "none", o.querySelector(".reject").style.display = "inline-block", setTimeout(function() {
+            t.style.color = "red", t.style.marginTop = "10px", t.textContent = "Something went wrong, please try later.", o.appendChild(t), o.querySelector(".lds-spinner").style.display = "none", o.querySelector(".reject").style.display = "inline-block", setTimeout(function() {
               o.querySelector(".reject").style.display = "none", t.remove()
             }, 5e3)
           })
