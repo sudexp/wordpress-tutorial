@@ -4,149 +4,89 @@
     <div class="mainslider glide">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          <li
-            style="background-image: url('<?php echo bloginfo('template_url'); ?>/assets/img/bg_1.jpg')"
-            class="glide__slide"
-          >
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-7 offset-1">
-                  <h2 class="slider__title">Dreams come true</h2>
-                  <a href="#" class="button">Learn more</a>
-                </div>
-              </div>
-              <button
-                class="glide__arrow glide__arrow--left"
-                data-glide-dir="<"
-              >
-                <svg
-                  width="15"
-                  height="25"
-                  viewBox="0 0 15 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.982942 13.3923L12.2253 24.631C12.7186 25.123 13.5179 25.123 14.0124 24.631C14.5057 24.1389 14.5057 23.3397 14.0124 22.8476L3.66178 12.5007L14.0112 2.15378C14.5045 1.66172 14.5045 0.862477 14.0112 0.369169C13.5179 -0.122894 12.7174 -0.122894 12.2241 0.369169L0.981696 11.6077C0.495966 12.0947 0.495966 12.9065 0.982942 13.3923Z"
-                    fill="white"
-                  />
-                </svg>
-              </button>
-              <button
-                class="glide__arrow glide__arrow--right"
-                data-glide-dir=">"
-              >
-                <svg
-                  width="15"
-                  height="25"
-                  viewBox="0 0 15 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.0171 11.6077L2.77467 0.369029C2.28137 -0.123032 1.48213 -0.123032 0.987571 0.369029C0.494263 0.861093 0.494264 1.66033 0.987572 2.15239L11.3382 12.4993L0.98882 22.8462C0.495512 23.3383 0.495512 24.1375 0.98882 24.6308C1.48213 25.1229 2.28261 25.1229 2.77592 24.6308L14.0183 13.3923C14.504 12.9053 14.504 12.0935 14.0171 11.6077Z"
-                    fill="white"
-                  />
-                </svg>
-              </button>
-            </div>
-          </li>
-          <li
-            style="background-image: url('<?php echo bloginfo('template_url'); ?>/assets/img/bg_2.jpg')"
-            class="glide__slide"
-          >
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-7 offset-1">
-                  <h2 style="color: #fff" class="slider__title">
-                    Goods for all tastes
-                  </h2>
-                  <a href="#" class="button">Learn more</a>
-                </div>
-                <button
-                  class="glide__arrow glide__arrow--left"
-                  data-glide-dir="<"
-                >
-                  <svg
-                    width="15"
-                    height="25"
-                    viewBox="0 0 15 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+          <?php
+            // default settings 
+            $posts = get_posts( array(
+              'numberposts' => -1,
+              'category_name' => 'slider',
+              'orderby'     => 'date',
+              'order'       => 'ASC',
+              'post_type'   => 'post',
+              'suppress_filters' => true, // suppression of SQL query change filters
+            ) );
+            foreach( $posts as $post ){
+              setup_postdata($post);
+                // the_title() output format
+                ?>
+                  <li
+                    style="background-image: url('<?php the_field('slider_image'); ?>')"
+                    class="glide__slide"
                   >
-                    <path
-                      d="M0.982942 13.3923L12.2253 24.631C12.7186 25.123 13.5179 25.123 14.0124 24.631C14.5057 24.1389 14.5057 23.3397 14.0124 22.8476L3.66178 12.5007L14.0112 2.15378C14.5045 1.66172 14.5045 0.862477 14.0112 0.369169C13.5179 -0.122894 12.7174 -0.122894 12.2241 0.369169L0.981696 11.6077C0.495966 12.0947 0.495966 12.9065 0.982942 13.3923Z"
-                      fill="white"
-                    />
-                  </svg>
-                </button>
-                <button
-                  class="glide__arrow glide__arrow--right"
-                  data-glide-dir=">"
-                >
-                  <svg
-                    width="15"
-                    height="25"
-                    viewBox="0 0 15 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M14.0171 11.6077L2.77467 0.369029C2.28137 -0.123032 1.48213 -0.123032 0.987571 0.369029C0.494263 0.861093 0.494264 1.66033 0.987572 2.15239L11.3382 12.4993L0.98882 22.8462C0.495512 23.3383 0.495512 24.1375 0.98882 24.6308C1.48213 25.1229 2.28261 25.1229 2.77592 24.6308L14.0183 13.3923C14.504 12.9053 14.504 12.0935 14.0171 11.6077Z"
-                      fill="white"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </li>
-          <li
-            style="background-image: url('<?php echo bloginfo('template_url'); ?>/assets/img/bg_3.jpg')"
-            class="glide__slide"
-          >
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-7 offset-1">
-                  <h2 class="slider__title">Always with you.</h2>
-                  <a href="#" class="button">Learn more</a>
-                </div>
-                <button
-                  class="glide__arrow glide__arrow--left"
-                  data-glide-dir="<"
-                >
-                  <svg
-                    width="15"
-                    height="25"
-                    viewBox="0 0 15 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.982942 13.3923L12.2253 24.631C12.7186 25.123 13.5179 25.123 14.0124 24.631C14.5057 24.1389 14.5057 23.3397 14.0124 22.8476L3.66178 12.5007L14.0112 2.15378C14.5045 1.66172 14.5045 0.862477 14.0112 0.369169C13.5179 -0.122894 12.7174 -0.122894 12.2241 0.369169L0.981696 11.6077C0.495966 12.0947 0.495966 12.9065 0.982942 13.3923Z"
-                      fill="white"
-                    />
-                  </svg>
-                </button>
-                <button
-                  class="glide__arrow glide__arrow--right"
-                  data-glide-dir=">"
-                >
-                  <svg
-                    width="15"
-                    height="25"
-                    viewBox="0 0 15 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M14.0171 11.6077L2.77467 0.369029C2.28137 -0.123032 1.48213 -0.123032 0.987571 0.369029C0.494263 0.861093 0.494264 1.66033 0.987572 2.15239L11.3382 12.4993L0.98882 22.8462C0.495512 23.3383 0.495512 24.1375 0.98882 24.6308C1.48213 25.1229 2.28261 25.1229 2.77592 24.6308L14.0183 13.3923C14.504 12.9053 14.504 12.0935 14.0171 11.6077Z"
-                      fill="white"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </li>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-lg-7 offset-1">
+                          <h2 
+                          style="
+                          <?php 
+                            $field = get_field('text_color');
+                            if ($field == 'white') {
+                              ?>
+                                color: #fff
+                              <?php
+                            }
+                          ?>
+                          "
+                          class="slider__title"><?php the_title() ?></h2>
+                          <?php 
+                            $field = get_field('slider_button');
+                            if ($field == 'on') {
+                              ?>
+                                <a href="<?php the_field('resource_link') ?>" class="button">Learn more</a>
+                              <?php
+                            }
+                          ?>
+                        </div>
+                      </div>
+                      <button
+                        class="glide__arrow glide__arrow--left"
+                        data-glide-dir="<"
+                      >
+                        <svg
+                          width="15"
+                          height="25"
+                          viewBox="0 0 15 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.982942 13.3923L12.2253 24.631C12.7186 25.123 13.5179 25.123 14.0124 24.631C14.5057 24.1389 14.5057 23.3397 14.0124 22.8476L3.66178 12.5007L14.0112 2.15378C14.5045 1.66172 14.5045 0.862477 14.0112 0.369169C13.5179 -0.122894 12.7174 -0.122894 12.2241 0.369169L0.981696 11.6077C0.495966 12.0947 0.495966 12.9065 0.982942 13.3923Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        class="glide__arrow glide__arrow--right"
+                        data-glide-dir=">"
+                      >
+                        <svg
+                          width="15"
+                          height="25"
+                          viewBox="0 0 15 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14.0171 11.6077L2.77467 0.369029C2.28137 -0.123032 1.48213 -0.123032 0.987571 0.369029C0.494263 0.861093 0.494264 1.66033 0.987572 2.15239L11.3382 12.4993L0.98882 22.8462C0.495512 23.3383 0.495512 24.1375 0.98882 24.6308C1.48213 25.1229 2.28261 25.1229 2.77592 24.6308L14.0183 13.3923C14.504 12.9053 14.504 12.0935 14.0171 11.6077Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </li>
+                <?php
+            }
+            wp_reset_postdata(); // reset
+          ?>
         </ul>
       </div>
     </div>
@@ -203,136 +143,81 @@
       <div class="container">
         <h2 class="subtitle">Product line 1</h2>
         <div class="products__wrapper">
+          <?php
+            // default settings 
+            $posts = get_posts( array(
+              'numberposts' => -1,
+              'category_name' => 'product_line_1',
+              'orderby'     => 'date',
+              'order'       => 'ASC',
+              'post_type'   => 'post',
+              'suppress_filters' => true, // suppression of SQL query change filters
+            ) );
+            foreach( $posts as $post ){
+              setup_postdata($post);
+                // the_title() output format
+          ?>
           <div
             class="products__item"
-            style="background-image: url(<?php echo bloginfo('template_url'); ?>/assets/img/product_1.jpg)"
+            style="background-image: url(<?php 
+            if (has_post_thumbnail()) {
+              the_post_thumbnail_url();
+            } else {
+              echo get_template_directory_uri() . '/assets/img/not_found.png';
+            }
+            ?>)"
           >
             <div class="products__item-info">
-              <div class="products__item-title">Product title 1</div>
+              <div class="products__item-title"><?php the_title(); ?></div>
               <div class="products__item-descr">
-                Erat imperdiet sed euismod nisi porta. Tempus urna et pharetra
-                pharetra massa massa ultricies mi quis.
+                <?php the_field('product_description') ?>
               </div>
               <div class="minibutton products__trigger">More details</div>
             </div>
           </div>
-
-          <div
-            class="products__item"
-            style="background-image: url(<?php echo bloginfo('template_url'); ?>/assets/img/product_2.jpg)"
-          >
-            <div class="products__item-info">
-              <div class="products__item-title">Product title 2</div>
-              <div class="products__item-descr">
-                Nulla malesuada pellentesque elit eget gravida cum sociis
-                natoque penatibus. Mi ipsum faucibus vitae aliquet nec
-                ullamcorper sit amet risus.
-              </div>
-              <div class="minibutton products__trigger">More details</div>
-            </div>
-          </div>
-
-          <div
-            class="products__item"
-            style="background-image: url(<?php echo bloginfo('template_url'); ?>/assets/img/product_3.jpg)"
-          >
-            <div class="products__item-info">
-              <div class="products__item-title">Product title 3</div>
-              <div class="products__item-descr">
-                Ornare quam viverra orci sagittis. Vitae justo eget magna
-                fermentum iaculis. Nunc mi ipsum faucibus vitae.
-              </div>
-              <div class="minibutton products__trigger">More details</div>
-            </div>
-          </div>
-
-          <div
-            class="products__item"
-            style="background-image: url(<?php echo bloginfo('template_url'); ?>/assets/img/product_4.jpg)"
-          >
-            <div class="products__item-info">
-              <div class="products__item-title">Product title 4</div>
-              <div class="products__item-descr">
-                Mauris vitae ultricies leo integer. Suspendisse faucibus
-                interdum posuere lorem ipsum dolor sit amet. Vitae tortor
-                condimentum lacinia quis vel eros.
-              </div>
-              <div class="minibutton products__trigger">More details</div>
-            </div>
-          </div>
-          <div
-            class="products__item"
-            style="background-image: url(<?php echo bloginfo('template_url'); ?>/assets/img/product_5.jpg)"
-          >
-            <div class="products__item-info">
-              <div class="products__item-title">Product title 5</div>
-              <div class="products__item-descr">
-                Sem fringilla ut morbi tincidunt augue. Enim sit amet venenatis
-                urna cursus eget nunc. Lacinia quis vel eros donec acodio
-                tempor.
-              </div>
-              <div class="minibutton products__trigger">More details</div>
-            </div>
-          </div>
-          <div
-            class="products__item"
-            style="background-image: url(<?php echo bloginfo('template_url'); ?>/assets/img/product_6.jpg)"
-          >
-            <div class="products__item-info">
-              <div class="products__item-title">Product title 6</div>
-              <div class="products__item-descr">
-                Laoreet id donec ultrices tincidunt arcu. A scelerisque purus
-                semper eget duis. Elit scelerisque mauris pellentesque pulvinar
-                pellentesque habitant morbi.
-              </div>
-              <div class="minibutton products__trigger">More details</div>
-            </div>
-          </div>
+          <?php
+            }
+            wp_reset_postdata(); // reset
+          ?>
         </div>
         <h2 class="subtitle">Product line 2</h2>
         <div class="products__wrapper">
+          <?php
+            // default settings 
+            $posts = get_posts( array(
+              'numberposts' => -1,
+              'category_name' => 'product_line_2',
+              'orderby'     => 'date',
+              'order'       => 'ASC',
+              'post_type'   => 'post',
+              'suppress_filters' => true, // suppression of SQL query change filters
+            ) );
+            foreach( $posts as $post ){
+              setup_postdata($post);
+                // the_title() output format
+          ?>
           <div
             class="products__item"
-            style="background-image: url(<?php echo bloginfo('template_url'); ?>/assets/img/product_7.jpg)"
+            style="background-image: url(<?php 
+            if (has_post_thumbnail()) {
+              the_post_thumbnail_url();
+            } else {
+              echo get_template_directory_uri() . '/assets/img/not_found.png';
+            }
+            ?>)"
           >
             <div class="products__item-info">
-              <div class="products__item-title">Product title 1</div>
+              <div class="products__item-title"><?php the_title(); ?></div>
               <div class="products__item-descr">
-                Posuere lorem ipsum dolor sit amet consectetur. Tincidunt nunc
-                pulvinar sapien et ligula ullamcorper malesuada proin. Viverra
-                mauris in aliquam sem fringilla.
+                <?php the_field('product_description') ?>
               </div>
               <div class="minibutton products__trigger">More details</div>
             </div>
           </div>
-          <div
-            class="products__item"
-            style="background-image: url(<?php echo bloginfo('template_url'); ?>/assets/img/product_8.jpg)"
-          >
-            <div class="products__item-info">
-              <div class="products__item-title">Product title 2</div>
-              <div class="products__item-descr">
-                Sed odio morbi quis commodo odio aenean sed. Morbi tempus
-                iaculis urna id volutpat. Massa tincidunt dui ut ornare lectus
-                sit amet. Eget est lorem ipsum dolor.
-              </div>
-              <div class="minibutton products__trigger">More details</div>
-            </div>
-          </div>
-          <div
-            class="products__item"
-            style="background-image: url(<?php echo bloginfo('template_url'); ?>/assets/img/product_9.jpg)"
-          >
-            <div class="products__item-info">
-              <div class="products__item-title">Product title 3</div>
-              <div class="products__item-descr">
-                Quisque sagittis purus sit amet. Posuere lorem ipsum dolor sit
-                amet. A iaculis at erat pellentesque. Ut aliquam purus sit amet
-                luctus venenatis lectus magna fringilla.
-              </div>
-              <div class="minibutton products__trigger">More details</div>
-            </div>
-          </div>
+          <?php
+            }
+            wp_reset_postdata(); // reset
+          ?>
         </div>
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
@@ -1272,47 +1157,30 @@
             <div class="feedslider glide">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
-                  <li class="glide__slide">
-                    <div class="feedslider__title">
-                      John Lennon
-                    </div>
-                    <div class="feedslider__text">
-                      Thank you so much for your courtesy and patience! Dolor
-                      sed viverra ipsum nunc aliquet bibendum. In dictum non
-                      consectetur a. Feugiat in fermentum posuere urna nec
-                      tincidunt praesent semper. Vivamus at augue eget arcu.
-                      Phasellus vestibulum lorem sed risus ultricies tristique
-                      nulla aliquet.
-                      <br /><br />
-                      ОInteger malesuada nunc vel risus. Quis hendrerit dolor
-                      magna eget est.
-                    </div>
-                  </li>
-                  <li class="glide__slide">
-                    <div class="feedslider__title">
-                      Freddie Mercury
-                    </div>
-                    <div class="feedslider__text">
-                      Est pellentesque elit ullamcorper dignissim cras. Luctus
-                      venenatis lectus magna fringilla urna porttitor rhoncus
-                      dolor. Mauris vitae ultricies leo integer malesuada nunc.
-                      Ac tortor vitae purus faucibus. Leo vel fringilla est
-                      ullamcorper eget. Arcu bibendum at varius vel pharetra
-                      vel.
-                    </div>
-                  </li>
-                  <li class="glide__slide">
-                    <div class="feedslider__title">
-                      Kurt Cobain
-                    </div>
-                    <div class="feedslider__text">
-                      Integer eget aliquet nibh praesent tristique magna sit.
-                      Massa tincidunt nunc pulvinar sapien et ligula ullamcorper
-                      malesuada. Tincidunt id aliquet risus feugiat in ante
-                      metus dictum at. Velit sed ullamcorper morbi tincidunt
-                      ornare massa eget egestas purus.
-                    </div>
-                  </li>
+                  <?php 
+                    $posts = get_posts( array(
+                        'numberposts' => -1,
+                        'category_name' => 'feedback',
+                        'orderby' => 'date',
+                        'order' => 'ASC',
+                        'post_type' => 'post',
+                        'suppress_filters' => true,
+                    ) );
+                    foreach( $posts as $post ){
+                        setup_postdata($post);
+                        ?>
+                        <li class="glide__slide">
+                            <div class="feedslider__title">
+                                <?php the_title(); ?>
+                            </div>
+                            <div class="feedslider__text">
+                                <?php the_field('feedback_text'); ?>
+                            </div>
+                        </li>
+                    <?php
+                    }
+                    wp_reset_postdata();
+                  ?>
                 </ul>
               </div>
             </div>

@@ -16,4 +16,6 @@
 
   // the ability to add a logo to Dashboard
   add_theme_support('custom-logo');
+  // enabling support for Post Thumbnails
+  add_theme_support('post-thumbnails');
 ?>
