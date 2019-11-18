@@ -18,4 +18,19 @@
   add_theme_support('custom-logo');
   // enabling support for Post Thumbnails
   add_theme_support('post-thumbnails');
+  // activate menus
+  add_theme_support('menus');
+
+  // a hook to catch all the attributes of dynamic links
+  add_filter('nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 3);
+  function filter_nav_menu_link_attributes($atts, $item, $args) {
+    if ($args->menu === 'Main') {
+      $atts['class'] = 'header__nav-item';
+      // activity class
+      if ($item->current) {
+        $atts['class'] .= ' header__nav-item-active'; // concat classes
+      }
+    }
+    return $atts;
+  }
 ?>

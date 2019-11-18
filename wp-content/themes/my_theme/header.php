@@ -111,25 +111,17 @@
           </div>
         </div>
         <nav class="row" data-slide="1">
-          <ul class="header__nav">
-            <li>
-              <a class="header__nav-item" href="#about">About company</a>
-            </li>
-            <li>
-              <a class="header__nav-item" href="#specialists">Our team</a>
-            </li>
-            <li>
-              <a class="header__nav-item" href="#products">Products</a>
-            </li>
-            <li>
-              <a class="header__nav-item" href="#aboutus">Our history</a>
-            </li>
-            <li>
-              <a class="header__nav-item" href="#contacts"
-                >Contacts and feedback</a
-              >
-            </li>
-          </ul>
+          <?php
+            wp_nav_menu( [
+              'menu'            => 'Main',
+              'container'       => false,
+              'menu_class'      => 'header__nav',
+              'echo'            => true,
+              'fallback_cb'     => 'wp_page_menu',
+              'items_wrap'      => '<ul class="header__nav">%3$s</ul>',
+              'depth'           => 1,
+            ] );
+          ?>
         </nav>
       </div>
       <div class="header__hamburger">

@@ -47,7 +47,7 @@ Create a new folder inside the *my-theme*, where you can transfer all other fold
 
 #### Adding styles and scripts dynamically
 Copy the contents of *assets/styles/main.css* file to *my_theme/stylle.css* file.  
-Replace the line *link rel="stylesheet" href="./styles/main.css"* with the following code from the hеad index.php tag:  
+Replace the line *link rel="stylesheet" href="./styles/main.css"* with the following code from the hеad tag of *index.php*:  
 ```
 // index.php
 <?php
@@ -160,15 +160,15 @@ Now, when you switch *Pages --> Main Page*, you can use the tabs, which is quite
 
 #### Title, description and image
 Add a new plugin *Advanced Custom Fields*:  
-*Dashboard --> Plugins --> Add new --> Advanced Custom Fields + Install + Activate*  
+*Dashboard --> Plugins --> Add new = Advanced Custom Fields + Install + Activate*  
 
 After that, a new Custom Fields plugin appeared in the side menu.  
 
-*Custom Fields --> Add New --> Add Title = About Company --> Location --> Show this field group if = Page Type + is equal to + Front Page --> Add Field --> Field Label = Сompany title --> Field Name = сompany_title --> Field Type = Text --> Instructions = Enter the title (max 30 characters) --> Required? = Yes --> Character Limit = 30 --> Add Field --> Field Label = Company description --> Field Name = company_description --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add br --> Add Field --> Field Label = Image --> Field Name = image --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Update*  
+*Dashboard --> Custom Fields --> Add New --> Add Title = About Company --> Location --> Show this field group if = Page Type + is equal to + Front Page --> Add Field --> Field Label = Сompany title --> Field Name = сompany_title --> Field Type = Text --> Instructions = Enter the title (max 30 characters) --> Required? = Yes --> Character Limit = 30 --> Add Field --> Field Label = Company description --> Field Name = company_description --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add br --> Add Field --> Field Label = Image --> Field Name = image --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Update*  
 
-*Settings --> Reading --> Your homepage displays = A static page (select below) --> Homepage: = Sample Page --> Save Changes*  
+*Dashboard --> Settings --> Reading --> Your homepage displays = A static page (select below) --> Homepage: = Sample Page --> Save Changes*  
 
-*Pages --> Sample Page = Main Page + remove all blocks --> Сompany title = About our company --> Company description = Our company has been giving positive emotions... (from *div class="about__text"*) --> Add Image --> Upload Files --> Select Files = img/about.jpg --> Alt Text = About Company --> Select --> Update*  
+*Dashboard --> Pages --> Sample Page = Main Page + remove all blocks --> Сompany title = About our company --> Company description = Our company has been giving positive emotions... (from *div class="about__text"*) --> Add Image --> Upload Files --> Select Files = img/about.jpg --> Alt Text = About Company --> Select --> Update*  
 
 Replace the code inside *h1 class="title underlined"* with the next one:  
 ```
@@ -192,13 +192,13 @@ Replace the code for the image *div class="about__img"*:
     src="<?php echo $image['url']; ?>"
     alt="<?php echo $image['alt']; ?>">
   <?php endif;
-  print_r($image);
+  // print_r($image);
 ?>
 ```
 
 #### General information
 ##### Email
-*Custom Fields --> Add New --> Add Title = General information --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Email --> Field Name = email --> Field Type = Text --> Required? = Yes --> Publish*  
+*Dashboard --> Custom Fields --> Add New --> Add Title = General information --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Email --> Field Name = email --> Field Type = Text --> Required? = Yes --> Publish*  
 
 Changing the content *div class="header__contacts"*:  
 ```
@@ -215,9 +215,9 @@ Changing the content *div class="contacts__mail"*:
 *Pages --> Main Page --> General information --> Email = sudexp@icloud.com --> Update*  
 
 ##### Phones
-*Custom Fields --> General information --> Add Field --> Field Label = Phone 1 --> Field Name = phone_1 --> Field Type = Text --> Required? = Yes --> Update*  
+*Dashboard --> Custom Fields --> General information --> Add Field --> Field Label = Phone 1 --> Field Name = phone_1 --> Field Type = Text --> Required? = Yes --> Update*  
 
-*Custom Fields --> General information --> Add Field --> Field Label = Phone 2 --> Field Name = phone_2 --> Field Type = Text --> Required? = Yes --> Update*  
+*Dashboard --> Custom Fields --> General information --> Add Field --> Field Label = Phone 2 --> Field Name = phone_2 --> Field Type = Text --> Required? = Yes --> Update*  
 
 Changing the content *div class="header__contacts-tel"*:  
 ```
@@ -226,24 +226,24 @@ Changing the content *div class="header__contacts-tel"*:
 <a href="<?php the_field('phone_2', 2); ?>" class="header__contacts-tel"><?php the_field('phone_2', 2); ?></a>
 ```
 
-Similarly, change the tags *a* with phone numbers in index.php and footer.php files:  
+Similarly, change the *a* tags with phone numbers in index.php and footer.php files:  
 ```
 // index.php, footer.php
 <a href="<?php the_field('phone_1', 2); ?>" class="header__contacts-tel"><?php the_field('phone_1', 2); ?></a>
 <a href="<?php the_field('phone_2', 2); ?>" class="header__contacts-tel"><?php the_field('phone_2', 2); ?></a>
 ```
 
-*Pages --> Main Page --> General information --> Phone 1 = +358400000000 --> Update*  
-*Pages --> Main Page --> General information --> Phone 2 = +358500000000 --> Update*  
+*Dashboard --> Pages --> Main Page --> General information --> Phone 1 = +358400000000 --> Update*  
+*Dashboard --> Pages --> Main Page --> General information --> Phone 2 = +358500000000 --> Update*  
 
 ##### Social media
-*Custom Fields --> General information --> Add Field --> Field Label = Instagram --> Field Name = instagram --> Field Type = Text --> Required? = Yes --> Update*  
+*Dashboard --> Custom Fields --> General information --> Add Field --> Field Label = Instagram --> Field Name = instagram --> Field Type = Text --> Required? = Yes --> Update*  
 
-*Custom Fields --> General information --> Add Field --> Field Label = Facebook --> Field Name = facebook --> Field Type = Text --> Required? = Yes --> Update*  
+*Dashboard --> Custom Fields --> General information --> Add Field --> Field Label = Facebook --> Field Name = facebook --> Field Type = Text --> Required? = Yes --> Update*  
 
-*Custom Fields --> General information --> Add Field --> Field Label = Youtube --> Field Name = youtube --> Field Type = Text --> Required? = Yes --> Update*  
+*Dashboard --> Custom Fields --> General information --> Add Field --> Field Label = Youtube --> Field Name = youtube --> Field Type = Text --> Required? = Yes --> Update*  
 
-Change all tags *a* to *div class="footer__social"*:  
+Change all *a* tags to *div class="footer__social"*:  
 ```
 // footer.php
 <a href="<?php the_field('instagram', 2); ?>" class="footer__social-item">
@@ -251,14 +251,14 @@ Change all tags *a* to *div class="footer__social"*:
 <a href="<?php the_field('youtube', 2); ?>" class="footer__social-item">
 ```
 
-*Pages --> Main Page --> General information --> Instagram = Instagram --> Update*  
-*Pages --> Main Page --> General information --> Facebook = Facebook --> Update*  
-*Pages --> Main Page --> General information --> Youtube = Youtube --> Update*  
+*Dashboard --> Pages --> Main Page --> General information --> Instagram = Instagram --> Update*  
+*Dashboard --> Pages --> Main Page --> General information --> Facebook = Facebook --> Update*  
+*Dashboard --> Pages --> Main Page --> General information --> Youtube = Youtube --> Update*  
 
 #### Our team
 Also create a possibility to replace the team image through the dashboard:  
 
-*Custom Fields --> Add New --> Add Title = Our team --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Team Image --> Field Name = team_image --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Publish*  
+*Dashboard --> Custom Fields --> Add New --> Add Title = Our team --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Team Image --> Field Name = team_image --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Publish*  
 
 Replace *img class="specialists__img"* with the next one:  
 ```
@@ -270,14 +270,13 @@ Replace *img class="specialists__img"* with the next one:
     src="<?php echo $image['url']; ?>"
     alt="<?php echo $image['alt']; ?>">
   <?php endif;
-  print_r($image);
 ?>
 ```
 
-*Pages --> Main Page --> Our team --> Add Image --> Upload Files --> Select Files = img/about_1.jpg --> Update*  
+*Dashboard --> Pages --> Main Page --> Our team --> Add Image --> Upload Files --> Select Files = img/about_1.jpg --> Update*  
 
 #### Alert
-*Custom Fields --> Add New --> Add Title = Alert --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Text Alert --> Field Name = text_alert --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add br --> Publish*  
+*Dashboard --> Custom Fields --> Add New --> Add Title = Alert --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Text Alert --> Field Name = text_alert --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add br --> Publish*  
 
 Replace the code inside *div class="products__alert"* with the next one:  
 ```
@@ -285,16 +284,16 @@ Replace the code inside *div class="products__alert"* with the next one:
 <?php the_field('text_alert'); ?>
 ```
 
-*Pages --> Main Page --> Alert --> Text Alert = Eget gravida cum sociis natoque. Elementum nibh tellus molestie nunc. Viverra nibh cras pulvinar mattis nunc sed. In metus vulputate eu scelerisque felis imperdiet proin. --> Update*  
+*Dashboard --> Pages --> Main Page --> Alert --> Text Alert = Eget gravida cum sociis natoque. Elementum nibh tellus molestie nunc. Viverra nibh cras pulvinar mattis nunc sed. In metus vulputate eu scelerisque felis imperdiet proin. --> Update*  
 
 #### Our History
 In the same way we replace the headings, text fields and images of this section of the site. For example, I will give you a sequence of actions for one of the blocks:  
 
-*Custom Fields --> Add New --> Add Title = Our history --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Title 1 --> Field Name = title_1 --> Field Type = Text --> Required? = Yes --> Publish*  
+*Dashboard --> Custom Fields --> Add New --> Add Title = Our history --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Title 1 --> Field Name = title_1 --> Field Type = Text --> Required? = Yes --> Publish*  
 
-*Custom Fields --> Our history --> Add Field --> Field Label = Description 1 --> Field Name = description_1 --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add br --> Update*  
+*Dashboard --> Custom Fields --> Our history --> Add Field --> Field Label = Description 1 --> Field Name = description_1 --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add br --> Update*  
 
-*Custom Fields --> Our history --> Add Field --> Field Label = Image 1 --> Field Name = image_1 --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Update*  
+*Dashboard --> Custom Fields --> Our history --> Add Field --> Field Label = Image 1 --> Field Name = image_1 --> Field Type = Image --> Required? = Yes --> Return Format = Image URL --> Preview Size = Full Size --> Update*  
 
 Replace the code inside *div class="subtitle"*:  
 ```
@@ -311,48 +310,42 @@ Replace the code inside *div class="aboutus__text"*:
 Replace *img class="aboutus__img" src="<?php echo bloginfo('template_url'); ?>/assets/img/about_1.jpg" alt="company"*:  
 ```
 // index.php
-<?php
-  $image = get_field('image_1');
-  if (!empty($image)): ?>
-    <img
-    src="<?php echo $image['url']; ?>"
-    alt="<?php echo $image['alt']; ?>">
-  <?php endif;
-  print_r($image);
-?>
+<img class="aboutus__img" src="<?php the_field('image_1'); ?>" alt="about us">
 ```
 
-*Pages --> Main Page --> Our history --> Title 1 = IT ALL BEGAN WITH A DESIRE --> Update*  
+*Dashboard --> Pages --> Main Page --> Our history --> Title 1 = IT ALL BEGAN WITH A DESIRE --> Update*  
 
-*Pages --> Main Page --> Our history --> Description 1 = Morbi leo urna molestie at elementum. Nulla pharetra diam sit amet. Augue interdum velit euismod in pellentesque massa placerat.*
+*Dashboard --> Pages --> Main Page --> Our history --> Description 1 = Morbi leo urna molestie at elementum. Nulla pharetra diam sit amet. Augue interdum velit euismod in pellentesque massa placerat.*
 *Vel eros donec ac odio tempor orci dapibus ultrices in. Blandit massa enim nec dui nunc. Dolor sit amet consectetur adipiscing elit. Porttitor massa id neque aliquam vestibulum. Ac turpis egestas maecenas pharetra convallis posuere morbi leo. Nibh tellus molestie nunc non blandit massa enim nec dui. Enim facilisis gravida neque convallis. --> Update*  
 
-*Pages --> Main Page --> Our history --> Image 1 --> Add Image --> Upload Files --> Select Files = img/about_1.jpg --> Update*  
+*Dashboard --> Pages --> Main Page --> Our history --> Image 1 --> Add Image --> Upload Files --> Select Files = img/about_1.jpg --> Update*  
 
 *Tip:* Use the "duplicate" option for similar fields.  
 
+Similarly, we create the *Contacts* page and make the *Address* field available for editing from the dashboard.  
+
 ### Dynamic output/display of posts
 Let's create next categories:  
-*Posts --> Categories --> Add new category --> Name = Slider --> Slug = slider --> Add New Category*  
-*Posts --> Categories --> Add new category --> Name = Product line 1 --> Slug = product_line_1 --> Add New Category*  
-*Posts --> Categories --> Add new category --> Name = Product line 2 --> Slug = product_line_2 --> Add New Category*  
-*Posts --> Categories --> Add new category --> Name = Feedback --> Slug = feedback --> Add New Category*  
+*Dashboard --> Posts --> Categories --> Add new category --> Name = Slider --> Slug = slider --> Add New Category*  
+*Dashboard --> Posts --> Categories --> Add new category --> Name = Product line 1 --> Slug = product_line_1 --> Add New Category*  
+*Dashboard --> Posts --> Categories --> Add new category --> Name = Product line 2 --> Slug = product_line_2 --> Add New Category*  
+*Dashboard --> Posts --> Categories --> Add new category --> Name = Feedback --> Slug = feedback --> Add New Category*  
 
 Add new Posts:  
-*Posts --> Add new --> Add title = Dreams come true --> Categories = Slider --> Publish*  
-*Posts --> Add new --> Add title = Goods for all tastes --> Categories = Slider --> Publish*  
-*Posts --> Add new --> Add title = Always with you --> Categories = Slider --> Publish*  
-*Posts --> Add new --> Add title = Product 1 --> Categories = Product line 1 --> Publish*  
+*Dashboard --> Posts --> Add new --> Add title = Dreams come true --> Categories = Slider --> Publish*  
+*Dashboard --> Posts --> Add new --> Add title = Goods for all tastes --> Categories = Slider --> Publish*  
+*Dashboard --> Posts --> Add new --> Add title = Always with you --> Categories = Slider --> Publish*  
+*Dashboard --> Posts --> Add new --> Add title = Product 1 --> Categories = Product line 1 --> Publish*  
 ...  
-*Posts --> Add new --> Add title = Product 9 --> Categories = Product line 2 --> Publish*  
+*Dashboard --> Posts --> Add new --> Add title = Product 9 --> Categories = Product line 2 --> Publish*  
 ...  
-*Posts --> Add new --> Add title = Feedback 3 --> Categories = Feedback --> Publish*  
+*Dashboard --> Posts --> Add new --> Add title = Feedback 3 --> Categories = Feedback --> Publish*  
 
 Change the settings for permanent links:
 *Settings --> Permalinks --> Custom Structure = /%category%/%postname%/ --> Save changes*
 
 #### Sliders
-Inside tag *ul class="glide__slides "* place the following code:
+Inside *ul class="glide__slides "* place the following code:
 ```
 // index.php
 <?php
@@ -422,7 +415,7 @@ Inside tag *ul class="glide__slides "* place the following code:
   ?>
 ```
 
-*Custom Fields --> Add New --> Add Title = Slider --> Location --> Show this field group if = Post Category + is equal to + Slider --> Add field --> Field Label = Slider image --> Field Name = slider_image --> Field Type = Image --> Required? = Yes --> Return Format = Image URL --> Publish*  
+*Dashboard --> Custom Fields --> Add New --> Add Title = Slider --> Location --> Show this field group if = Post Category + is equal to + Slider --> Add field --> Field Label = Slider image --> Field Name = slider_image --> Field Type = Image --> Required? = Yes --> Return Format = Image URL --> Publish*  
 
 *Add field --> Field Label = Text Color --> Field Name = text_color --> Field Type = Radio Button --> Required? = Yes --> Choices = white, dark --> Update*  
 
@@ -464,14 +457,14 @@ Change part of the previous code as follows:
 
 Fill in the slides that we have with different parameters on the example of one of them:  
 
-*Posts --> Dreams Come True --> Add image --> Upload Image --> Select Files --> img/bg_1 --> Select --> Text Color = dark --> Button = on --> Resourse Link = https://github.com/sudexp/wordpress-tutorial --> Update*  
+*Dashboard --> Posts --> Dreams Come True --> Add image --> Upload Image --> Select Files --> img/bg_1 --> Select --> Text Color = dark --> Button = on --> Resourse Link = https://github.com/sudexp/wordpress-tutorial --> Update*  
 
 Remove all other code for static slides from index.php, you won't need it anymore - all sliders are displayed as posts dynamically.  
 
 In the same way change feedback sliders at the bottom of the page.  
 
 #### Products
-*Custrom fields --> Add Title = Products --> Location --> Show this field group if = Post Category + is equal to + Product line 1 --> Add rule group --> Show this field group if = Post Category + is equal to + Product line 2  --> Add field --> Field Label = Product Description --> Field Name = product_description --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New Lines = Automatically add br --> Publish*  
+*Dashboard --> Custrom fields --> Add Title = Products --> Location --> Show this field group if = Post Category + is equal to + Product line 1 --> Add rule group --> Show this field group if = Post Category + is equal to + Product line 2  --> Add field --> Field Label = Product Description --> Field Name = product_description --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New Lines = Automatically add br --> Publish*  
 
 Enabling support for post thumbnails:  
 ```
@@ -480,7 +473,7 @@ add_theme_support('post-thumbnails');
 
 ```
 
-Inside the tag *div class="products__wrapper "* insert the following code:  
+Inside *div class="products__wrapper "* insert the following code:  
 ```
 // index.php
 <?php
@@ -523,7 +516,7 @@ Inside the tag *div class="products__wrapper "* insert the following code:
 
 Fill all products through the dashboard:  
 
-*Posts --> Product 1 --> Product Description = Erat imperdiet sed euismod nisi porta. Tempus urna et pharetra pharetra massa massa ultricies mi quis. --> Set featured  image --> Upload Files --> Select Files --> img/product_1.jpg --> Update*  
+*Dashboard --> Posts --> Product 1 --> Product Description = Erat imperdiet sed euismod nisi porta. Tempus urna et pharetra pharetra massa massa ultricies mi quis. --> Set featured  image --> Upload Files --> Select Files --> img/product_1.jpg --> Update*  
 
 In the same way, dynamically change Product Line 2.  
 
@@ -532,8 +525,8 @@ Finally, remove unnecessary code with static products.
 ### Working with forms
 Install and activate Contact Form 7 plugin:  
 
-*Plugins --> Add New --> Contact Form 7 --> Install Now --> Activate*
-*Contact --> Contact Form 1 --> Title = Feedback form*
+*Dashboard --> Plugins --> Add New = Contact Form 7 + Install Now + Activate*
+*Dashboard --> Contact --> Contact Form 1 --> Title = Feedback form*
 
 In the *Form* tab, replace the default code with this one:  
 ```
@@ -599,3 +592,167 @@ Finally save all changes on the page using the *Save* button in the upper right 
 ```
 
 In a similar way, change form of the tooltip.  
+
+### Google Maps
+Follow the instructions of [Get an API Key](https://developers.google.com/maps/documentation/embed/get-api-key) to get Api Key you need to activate Google Maps.
+
+*Dashboard --> Plugins --> Add New = WP Google Maps + Install Now + Activate*  
+*Dashboard --> Maps --> Skip intro and create a map*  
+
+Insert your Api Key into the *Paste your API key here and press save:* field and press *Save* button. In the window that appears, click *My first map* to edit the map we need.  
+
+On the *General Settings* tab, set the settings you prefer.  
+
+In *index.php* file comment on the following code:  
+```
+// index.php
+<!-- <div class="mapouter">
+  <div class="gmap_canvas">
+    <iframe
+      width="550"
+      height="350"
+      id="gmap_canvas"
+      src="https://maps.google.com/maps?q=piippukatu%202%20jyv%C3%A4skyl%C3%A4&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      frameborder="0"
+      scrolling="no"
+      marginheight="0"
+      marginwidth="0"></iframe><a href="https://www.whatismyip-address.com"
+      >whatismyip-address.com</a>
+  </div>
+</div> -->
+```
+
+And add another one instead:  
+```
+// index.php
+<div>
+  <?php echo do_shortcode('[wpgmza id="1"]') ?> // short code from plugin
+</div>
+```
+
+Save the map settings and go to the site web-page. As you can see, map appears, but immediately disappears, throwing an error. The fact is that Google maps have recently become paid and are not displayed with free API keys.  
+
+I don't think the customer of our site will often have to change the company address, so I will return the static map code back.  
+
+### Transformation the project into a multi-page
+In the root folder *my_theme*, create a folder called *templates*, where the following page templates will be created:
+- page-contacts.php  
+- page-history.php  
+- page-products.php  
+- page-team.php  
+
+In *page-team.php* create the following code:  
+```
+// page-team.php
+<?php
+  /*
+  Template Name: Our team
+  */
+?>
+
+<?php
+  get_header();
+?>
+
+// cut it from index.php and remove id (it's not necessary anymore)
+<div class="specialists">
+  <div class="container">
+    <div class="title">Our team</div>
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <?php
+          $image = get_field('team_image');
+          if (!empty($image)): ?>
+              <img 
+              src="<?php echo $image['url']; ?>" 
+              alt="<?php echo $image['alt']; ?>"
+              class="specialists__img">
+          <?php endif;
+        ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php
+  get_footer();
+?>
+```
+
+Similarly, fill in the contents of the other files, remembering to delete the corresponding *index.php* blocks, to keep it that way in the end:  
+```
+// index.php
+<?php
+  get_header();
+?>
+<div class="mainslider glide">
+  // the contents of div here
+</div>
+
+<div class="about">
+  // the contents of div here
+</div>
+
+<?php
+  get_footer();
+?>
+```
+
+Now let's start creating pages:  
+
+*Dashboard --> Pages --> Add New --> Add Tittle = Our team --> Template --> Default template = Our team --> Publish*  
+*Dashboard --> Pages --> Add New --> Add Tittle = Products --> Template --> Default template = Products --> Publish*  
+*Dashboard --> Pages --> Add New --> Add Tittle = Our history --> Template --> Default template = Our history --> Publish*  
+*Dashboard --> Pages --> Add New --> Add Tittle = Contacts and feedback --> Template --> Default template = Contacts and feedback --> Publish*  
+
+Refresh dashboard.  
+
+*Dashboard --> Custom fields --> Our team --> Location --> change Main Page to Our Team --> Update*  
+*Dashboard --> Custom fields --> Our history --> Location --> change Main Page to Our History --> Update*  
+*Dashboard --> Custom fields --> Contacts --> Location --> change Main Page to Contacts and feedback --> Update*  
+
+Re-fill the created pages with information, refresh [main page](http://localhost:8888/wordpress-tutorial/) and watch the changes. Also you can test pages [our team](http://localhost:8888/wordpress-tutorial/our-team/), [products](http://localhost:8888/wordpress-tutorial/products/), [our history](http://localhost:8888/wordpress-tutorial/our-history/), [contacts and feedback](http://localhost:8888/wordpress-tutorial/contacts-and-feedback/). So far there is no other way to check if the pages are working, except through url, as navigation is not working at the moment.  
+
+### Formation of dynamic navigation
+Activate the navigation menus in *functions.php*:  
+```
+// functions.php
+add_theme_support('menus');
+```
+
+Replace the contents of *nav class="row" data-slide="1"* with this:  
+```
+// header.php
+<?php
+  wp_nav_menu( [
+    'menu'            => 'Main',
+    'container'       => false,
+    'menu_class'      => 'header__nav',
+    'echo'            => true,
+    'fallback_cb'     => 'wp_page_menu',
+    'items_wrap'      => '<ul class="header__nav">%3$s</ul>',
+    'depth'           => 1,
+  ] );
+?>
+```
+
+*Dashboard --> Appearance --> Customize --> Menus --> Create New Menu --> Menu Name = Main --> Next --> Add Items = Home + Our team + Products + Our history + Contacts and feedback*  
+
+Configure each of the navigation menu items and place them in the desired order by dragging and dropping them and then press *Publish*.  
+
+Now it is important to return the correct class attributes for normal display of navigation elements on the page.  
+```
+// functions.php
+  // a hook to catch all the attributes of dynamic links
+  add_filter('nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 3);
+  function filter_nav_menu_link_attributes($atts, $item, $args) {
+    if ($args->menu === 'Main') {
+      $atts['class'] = 'header__nav-item';
+      // activity class
+      if ($item->current) {
+        $atts['class'] .= ' header__nav-item-active'; // concat classes
+      }
+    }
+    return $atts;
+  }
+```
