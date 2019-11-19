@@ -622,7 +622,7 @@ Finally save all changes on the page using *Save* button in the upper right corn
 Similarly, change the form of our tooltip.  
 
 ### Google Maps
-Follow the of [Google](https://developers.google.com/maps/documentation/embed/get-api-key) instructions to get API Key you need to activate Google Maps.
+Follow the [Google](https://developers.google.com/maps/documentation/embed/get-api-key) instructions to get API Key you need to activate Google Maps.
 
 *Dashboard --> Plugins --> Add New = WP Google Maps + Install Now + Activate*  
 *Dashboard --> Maps --> Skip intro and create a map*  
