@@ -41,7 +41,7 @@
           <div class="products__item-descr">
             <?php the_field('product_description') ?>
           </div>
-          <div class="minibutton products__trigger">More details</div>
+          <a href="<?php echo get_permalink(); ?>" class="minibutton products__trigger">More details</a>
         </div>
       </div>
       <?php
@@ -67,7 +67,7 @@
       ?>
       <div
         class="products__item"
-        style="background-image: url(<?php 
+        style="background-image: url(<?php
         if (has_post_thumbnail()) {
           the_post_thumbnail_url();
         } else {
@@ -80,7 +80,7 @@
           <div class="products__item-descr">
             <?php the_field('product_description') ?>
           </div>
-          <div class="minibutton products__trigger">More details</div>
+          <a href="<?php echo get_permalink(); ?>" class="minibutton products__trigger">More details</a>
         </div>
       </div>
       <?php

@@ -11,7 +11,7 @@
 
   // scripts adding
   function my_scripts() {
-    wp_enqueue_script('my_scripts', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
+    wp_enqueue_script('my_scripts', get_template_directory_uri() . '/assets/js/main.min.js', array(), null, true);
   }
 
   // the ability to add a logo to Dashboard
@@ -30,6 +30,10 @@
       if ($item->current) {
         $atts['class'] .= ' header__nav-item-active'; // concat classes
       }
+      // print_r($item);
+      if ( $item->ID === 180 && ( in_category( 'product_line_1' ) || in_category( 'product_line_2' ))){
+            $atts['class'] .= ' header__nav-item-active';
+        }
     }
     return $atts;
   }

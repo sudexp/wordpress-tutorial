@@ -178,7 +178,7 @@
                     </linearGradient>
                   </defs>
                 </svg>
-                <a href="<?php the_field('phone_1', 2); ?>" class="header__contacts-tel"><?php the_field('phone_1', 2); ?></a>
+                <a href="tel:<?php the_field('phone_1', 2); ?>" class="header__contacts-tel"><?php the_field('phone_1', 2); ?></a>
               </div>
             </div>
             <div class="contacts__phoneblock">
@@ -314,13 +314,13 @@
                     </linearGradient>
                   </defs>
                 </svg>
-                <a href="<?php the_field('phone_2', 2); ?>" class="header__contacts-tel"><?php the_field('phone_2', 2); ?></a>
+                <a href="tel:<?php the_field('phone_2', 2); ?>" class="header__contacts-tel"><?php the_field('phone_2', 2); ?></a>
               </div>
             </div>
           </div>
           <div class="contacts__mail">
             Or e-mail us
-            <a href="<?php the_field('email', 2); ?>" class="header__contacts-mail"><?php the_field('email', 2); ?></a>
+            <a href="mailto:<?php the_field('email', 2); ?>" class="header__contacts-mail"><?php the_field('email', 2); ?></a>
           </div>
         </div>
       </div>

@@ -1,34 +1,34 @@
-## wordpress-tutorial
+## Wordpress tutorial
 Converting HTML Site to WordPress: quick tutorial for beginners.  
 
 ### Install working tools
 - source code editor [Visual Studio Code](https://code.visualstudio.com/) (optionally)  
-- local server environment [MAMP](https://www.mamp.info/en/) for mac os (or [XAMPP](https://www.apachefriends.org/download.html) for windows)  
+- local server environment [MAMP](https://www.mamp.info/en/) for Mac OS (or [XAMPP](https://www.apachefriends.org/download.html) for Windows)  
 
-### Adjustment of the environment
-Open MAMP and start servers. In the main window click "Open WebStart Page" and in the opened browser window select "TOOLS" tab and click on "PHP MY ADMIN". In the opened browser window click "Databases" and create a new *wordpress-tutorial-db* database. Once the database has been created, you need to create/add a new user to this database. To do this, click on "Priveleges" tab and then "Add user account". Fill in the fields for "User name", "Password" and "Re-type", check "Check all" in the "Global ptivileges" field and click on the "Go" button at the right bottom of the web page.  
+### Adjustment of environment
+Open MAMP and start servers. In the main window click "Open WebStart Page" and in opened browser window select "TOOLS" tab and click on "PHP MY ADMIN". Next, click "Databases" and create a new *wordpress-tutorial-db* database. Once the database has been created, you need to create/add a new user to this database. To do this, click on "Priveleges" tab and then "Add user account". Fill in the fields for "User name", "Password" and "Re-type", check "Check all" in "Global privileges" field and click on "Go" button at the right bottom of the web page.  
 
-Download source [static_html](https://drive.google.com/file/d/1t052PB9It9zF5rE25ZGH5HPQcvsQDRTW/view?usp=sharing) project for further work and unzip it.  
+Download source [static_html](https://drive.google.com/file/d/1CVUeXxZRzvBa6BHFkL-Yl6S8_scpWzyr/view?usp=sharing) project for further work and unzip it.  
 
-This site is like a portfolio of traveler of a company that produces certain goods for consumers. Our task is to transform this site into a web application that will allow its owners, editors or other authors to manage it and publish content without any programming knowledge. For this we are going to use [WordPress](https://wordpress.org) - open source software you can use to create a beautiful website, blog, or app.  
+This site is like a portfolio of some company that produces certain goods for consumers. Our task is to transform this site into a web application that will allow its owners, editors or other authors to manage it and publish content without any programming knowledge. For this, we are going to use [WordPress](https://wordpress.org) - open-source software you can use to create a beautiful website, blog, or app.  
 
-Download [WordPress](https://wordpress.org/download/), unzip it, rename it, for example, to *wordpress-tutorial* and move it to the *Applications/MAMP/htdocs* folder.  
+Download [WordPress](https://wordpress.org/download/), unzip and rename it, for example, to *wordpress-tutorial* and move it to *Applications/MAMP/htdocs* folder.  
 
 ### WordPress adjustment
-In the main window of MAMP click "Open WebStart Page" and in the opened browser window select "MY WEBSITE" tab and click on it. The browser will redirect you to [http://localhost:8888](http://localhost:8888) where you can find a list of projects in the Applications/MAMP/htdocs directory, one of which will be *wordpress-tutorial*. Click on it. The browser will download [setup page](http://localhost:8888/wordpress-tutorial/wp-admin/setup-config.php) where you sholud to perform the following steps required to configure Wordpress:  
+In the main window of MAMP click "Open WebStart Page" and in the opened browser select "MY WEBSITE" tab and click it. The browser will redirect you to [http://localhost:8888](http://localhost:8888) where you can find a list of projects in *Applications/MAMP/htdocs* directory, one of which is *wordpress-tutorial*. Click this. The browser will download [setup page](http://localhost:8888/wordpress-tutorial/wp-admin/setup-config.php) where you should to perform the following steps required to configure [Wordpress](https://wordpress.org/support/article/how-to-install-wordpress/):  
 
-1. Choose prefer language and click "Continue". Then click "Let's go".  
-2. Enter the "Database Name", "User" and "Password" fields taking into account the ADMINs created in PHP MY ADMIN earlier and click "Submit".  
-3. If all the previous steps have been done correctly, a window will appear saying "All right, sparky! You’ve made it through this part of the installation. WordPress can now communicate with your database. If you are ready, time now to…". Click "Run the installation".  
-4. Fill in the required fields in the window that appears and click "Install WordPress". Note that the "Username" and "Password" fields do not belong to our database, but are created for the customer, who will make changes to the site using the Dashboard.  
-5. Click "Log In" for final step.
+1. Choose to prefer language and click *Continue*. Then click *Let's go*.  
+2. Enter *Database Name*, *User* and *Password* fields taking into account ADMINs created in PHP MY ADMIN earlier and click *Submit*.  
+3. If all the previous steps have been done correctly, the window will appear saying "All right, sparky! You’ve made it through this part of the installation. WordPress can now communicate with your database. If you are ready, time now to…". Click *Run the installation*.  
+4. Fill in the required fields in the window that appears and click "Install WordPress". Note that the *Username* and *Password* fields do not belong to our database, but are created for the customer, who will make changes to the site using Dashboard.  
+5. Click *Log In* for the final step.
 
 ### Theme creating
-Open *wordpress-tutorial* folder in the code editor. In *wp-contents/themes* folder create a new folder named *my_theme*, where you should create 2 files:  
+Open *wordpress-tutorial* folder in code editor. In *wp-contents/themes* folder create a new folder named *my_theme*, where you should to create 2 files:  
 - style.css (style file)  
 - index.php (start file of the main page).  
 
-The only necessary component of the style.css file to be written in it is the comment with a title "Theme Name:". Add it to this file:  
+The only necessary component of *style.css* file to be written in it's the comment with the title "Theme Name:". Add it to this file:  
 ```
 // style.css
 /*
@@ -38,16 +38,16 @@ Theme Name: My Theme
 
 Index.php file can theoretically be left blank.  
 
-Let's make sure the theme is working now. In the dashboard, go to *Appearance --> Themes* and activate "My Theme", refresh [browser page](http://localhost:8888/wordpress-tutorial/).  
+Let's make sure that the theme is working now. In *Dashboard*, go to *Appearance --> Themes* and activate *My Theme*, refresh [browser page](http://localhost:8888/wordpress-tutorial/).  
 
-### Update the theme
-Open index.php file and transfer all code from index.html file of the source project into it [static_html](https://drive.google.com/file/d/1vGYTx8QHWuXU-vbwwcpN0oCM-46t6zmC/view?usp=sharing).  
+### Update theme
+Open *index.php* file and transfer all code from *index.html* file of source project into it [static_html](https://drive.google.com/file/d/1vGYTx8QHWuXU-vbwwcpN0oCM-46t6zmC/view?usp=sharing).  
 
-Create a new folder inside the *my-theme*, where you can transfer all other folders and files of the source project: *fonts*, *img*, *js* and *styles*.  
+Create a new folder inside the *my-theme*, where you can transfer all other folders and files of our source project: *fonts*, *img*, *js* and *styles*.  
 
 #### Adding styles and scripts dynamically
-Copy the contents of *assets/styles/main.css* file to *my_theme/stylle.css* file.  
-Replace the line *link rel="stylesheet" href="./styles/main.css"* with the following code from the hеad tag of *index.php*:  
+Copy contents of *assets/styles/main.min.css* file to *my_theme/stylle.css* file.  
+Replace *link rel="stylesheet" href="./styles/main.min.css"* with the following code from hеad of *index.php*:  
 ```
 // index.php
 <?php
@@ -55,7 +55,7 @@ Replace the line *link rel="stylesheet" href="./styles/main.css"* with the follo
 ?>
 ```
 
-Replace the code *script src="./js/main.js" defer* at the end of body tag with the following:  
+Replace *script src="./js/main.min.js" defer* at the end of body with the following:  
 ```
 // index.php
 <?php
@@ -73,28 +73,28 @@ Create *functions.php* file in *my_theme* directory:
   // styles adding
   function my_styles() {
     wp_enqueue_style('my_style', get_stylesheet_uri());
-    // wp_enqueue_style( 'header_style', get_template_directory_uri() . '/assets/styles/main.css');
+    // wp_enqueue_style( 'header_style', get_template_directory_uri() . '/assets/styles/main.min.css');
     // wp_enqueue_style( 'animate_style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css');
   }
 
   // scripts adding
   function my_scripts() {
-    wp_enqueue_script('my_scripts', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
+    wp_enqueue_script('my_scripts', get_template_directory_uri() . '/assets/js/main.min.js', array(), null, true);
   }
 ?>
 ```
 
 #### Adding images and fonts
-In index.php replace all incorrect urls *./img* with the current theme's url *<?php echo bloginfo('template_url'); ?>/assets/img*.  
-In style.css replace all urls *../img* with url *assets/img* and all fonts *../fonts* with url *assets/fonts*.  
+In *index.php* replace all incorrect URLs *./img* with the current theme's URL *<?php echo bloginfo('template_url'); ?>/assets/img*.  
+In *style.css* replace all URLs *../img* with URL *assets/img* and all fonts *../fonts* with URL *assets/fonts*.  
 
-*Tip:* use the search and replacement features of the code editor.  
+*Tip:* use search and replacement features of your code editor.  
 
-Update the [page](http://localhost:8888/wordpress-tutorial/) in browser and make sure it is fully functional.  
+Update [page](http://localhost:8888/wordpress-tutorial/) in the browser and make sure it is fully functional.  
 
-### Formation of the correct page structure
+### Formation of correct page structure
 #### Header
-In directory *my_theme* create a new file *header.php*, which will contain all the code located in the site header. In the main *index.php* theme file, select and cut out the entire part of the code above *div class="mainslider glide"* and paste it into the created *header.php*. At the beginning of *index.php* file, instead of the lost part, insert the following header connection code:  
+In directory *my_theme* create a new file *header.php*, which will contain all code located in site header. In main *index.php* theme file, select and cut out the entire part of code above *div class="mainslider glide"* and paste it into the created *header.php*. At the beginning of *index.php* file, instead of lost part, insert the following header connection code:  
 ```
 // index.php
 <?php
@@ -103,7 +103,7 @@ In directory *my_theme* create a new file *header.php*, which will contain all t
 ```
 
 #### Footer
-Similar to the above, create a new file *footer.php*, which will contain all the code located in the site footer. In  *index.php* select and cut out the entire part of the code below *div class="question"* (include it) and paste it into the created *footer.php*. At the end of *index.php* file, instead of the lost part, similarly  insert the following header connection code:  
+Similar to above, create a new file *footer.php*, which will contain all code located in site footer. In  *index.php* select and cut out the entire part of code below *div class="question"* (include it) and paste it into created *footer.php*. At the end of *index.php*, instead of lost part, similarly insert the following header connection code:  
 ```
 // index.php
 <?php
@@ -113,13 +113,13 @@ Similar to the above, create a new file *footer.php*, which will contain all the
 
 ### Setting up dynamic site changing from dashboard
 #### Logo
-To add a logo to the dashboard, insert the following code at the end of the *functions.php* file:  
+To add a logo to the dashboard, insert the following code at the end of *functions.php*:  
 ```
 // functions.php
 add_theme_support('custom-logo');
 ```
 
-Replace *a class="header__logo"* with the contents inside with the following code:
+Replace *a class="header__logo"* with contents inside with the following code:  
 ```
 // header.php
 <div class="header__logo">
@@ -127,7 +127,7 @@ Replace *a class="header__logo"* with the contents inside with the following cod
 </div>
 ```
 
-And similarly:
+And similarly:  
 ```
 // footer.php
 <div class="footer__logo">
@@ -135,19 +135,19 @@ And similarly:
 </div>
 ```
 
-Check that the logo is now available for adding to the site:  
+Check that logo is now available for adding to site:  
 *Dashboard --> Appearance --> Customize --> Site Indentify*  
 
-Click "Select logo" --> "Select files" and choose *img/logo.png*. Add *Alt Text* as, for example, "logo" and click "Select". Now and in the future, remember to press the *Publish* button on the dashboard.  
+Click *Select logo* --> *Select files* and choose *img/logo.png*. Add *Alt Text* as, for example, *logo* and click *Select*. Now and in the future, remember to press *Publish* button on Dashboard.  
 
 #### Title
-Change the content of the title tag:
+Change content of tag *title*:
 ```
 // header.php
 <?php bloginfo('name'); echo " | "; bloginfo('description') ?>
 ```
 
-Now you can change Site Title and Tagline in *Dashboard --> Appearance --> Customize --> Site Indentify*  
+Now you can change *Site Title* and *Tagline* in *Dashboard --> Appearance --> Customize --> Site Indentify*  
 
 ### Configuring custom fields
 #### Creating tabs
@@ -156,13 +156,13 @@ Now you can change Site Title and Tagline in *Dashboard --> Appearance --> Custo
 
 Move mouse over number 4 and drag this field up the section.  
 
-Now, when you switch *Pages --> Main Page*, you can use the tabs, which is quite convenient.  
+Now, when you switch *Pages --> Main Page*, you can use the tabs, which might be quite convenient when application grows.  
 
 #### Title, description and image
-Add a new plugin *Advanced Custom Fields*:  
+Add new plugin *Advanced Custom Fields*:  
 *Dashboard --> Plugins --> Add new = Advanced Custom Fields + Install + Activate*  
 
-After that, a new Custom Fields plugin appeared in the side menu.  
+After that, new *Custom Fields* plugin appeared in the side menu.  
 
 *Dashboard --> Custom Fields --> Add New --> Add Title = About Company --> Location --> Show this field group if = Page Type + is equal to + Front Page --> Add Field --> Field Label = Сompany title --> Field Name = сompany_title --> Field Type = Text --> Instructions = Enter the title (max 30 characters) --> Required? = Yes --> Character Limit = 30 --> Add Field --> Field Label = Company description --> Field Name = company_description --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add br --> Add Field --> Field Label = Image --> Field Name = image --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Update*  
 
@@ -170,19 +170,19 @@ After that, a new Custom Fields plugin appeared in the side menu.
 
 *Dashboard --> Pages --> Sample Page = Main Page + remove all blocks --> Сompany title = About our company --> Company description = Our company has been giving positive emotions... (from *div class="about__text"*) --> Add Image --> Upload Files --> Select Files = img/about.jpg --> Alt Text = About Company --> Select --> Update*  
 
-Replace the code inside *h1 class="title underlined"* with the next one:  
+Replace code inside *h1 class="title underlined"* with the next one:  
 ```
 // index.php
 <h1 class="title underlined"><?php the_field('сompany_title'); ?></h1>
 ```
 
-And the code inside *div class="about__text"* on it:  
+And code inside *div class="about__text"* on it:  
 ```
 // index.php
 <?php the_field('company_description'); ?>
 ```
 
-Replace the code for the image *div class="about__img"*:  
+Replacecode for image *div class="about__img"*:  
 ```
 // index.php
 <?php
@@ -200,16 +200,16 @@ Replace the code for the image *div class="about__img"*:
 ##### Email
 *Dashboard --> Custom Fields --> Add New --> Add Title = General information --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Email --> Field Name = email --> Field Type = Text --> Required? = Yes --> Publish*  
 
-Changing the content *div class="header__contacts"*:  
+Changing content *div class="header__contacts"*:  
 ```
 // header.php
-<a href="<?php the_field('email', 2); ?>" class="header__contacts-mail"><?php the_field('email', 2); ?></a>
+<a href="mailto:<?php the_field('email', 2); ?>"><?php the_field('email', 2); ?></a>
 ```
 
-Changing the content *div class="contacts__mail"*:  
+Changing content *div class="contacts__mail"*:  
 ```
 // index.php
-<a href="<?php the_field('email', 2); ?>" class="contacts__mail"><?php the_field('email', 2); ?></a>
+<a href="mailto:<?php the_field('email', 2); ?>"><?php the_field('email', 2); ?></a>
 ```
 
 *Pages --> Main Page --> General information --> Email = sudexp@icloud.com --> Update*  
@@ -219,18 +219,18 @@ Changing the content *div class="contacts__mail"*:
 
 *Dashboard --> Custom Fields --> General information --> Add Field --> Field Label = Phone 2 --> Field Name = phone_2 --> Field Type = Text --> Required? = Yes --> Update*  
 
-Changing the content *div class="header__contacts-tel"*:  
+Changing content *div class="header__contacts-tel"*:  
 ```
 // header.php
-<a href="<?php the_field('phone_1', 2); ?>" class="header__contacts-tel"><?php the_field('phone_1', 2); ?></a>
-<a href="<?php the_field('phone_2', 2); ?>" class="header__contacts-tel"><?php the_field('phone_2', 2); ?></a>
+<a href="tel:<?php the_field('phone_1', 2); ?>"><?php the_field('phone_1', 2); ?></a>
+<a href="tel:<?php the_field('phone_2', 2); ?>"><?php the_field('phone_2', 2); ?></a>
 ```
 
-Similarly, change the *a* tags with phone numbers in index.php and footer.php files:  
+Similarly, change *a* tags with phone numbers in *index.php* and *footer.php*:  
 ```
 // index.php, footer.php
-<a href="<?php the_field('phone_1', 2); ?>" class="header__contacts-tel"><?php the_field('phone_1', 2); ?></a>
-<a href="<?php the_field('phone_2', 2); ?>" class="header__contacts-tel"><?php the_field('phone_2', 2); ?></a>
+<a href="tel:<?php the_field('phone_1', 2); ?>" <?php the_field('phone_1', 2); ?></a>
+<a href="tel:<?php the_field('phone_2', 2); ?>" <?php the_field('phone_2', 2); ?></a>
 ```
 
 *Dashboard --> Pages --> Main Page --> General information --> Phone 1 = +358400000000 --> Update*  
@@ -251,12 +251,12 @@ Change all *a* tags to *div class="footer__social"*:
 <a href="<?php the_field('youtube', 2); ?>" class="footer__social-item">
 ```
 
-*Dashboard --> Pages --> Main Page --> General information --> Instagram = Instagram --> Update*  
-*Dashboard --> Pages --> Main Page --> General information --> Facebook = Facebook --> Update*  
-*Dashboard --> Pages --> Main Page --> General information --> Youtube = Youtube --> Update*  
+*Dashboard --> Pages --> Main Page --> General information --> Instagram = [Instagram](https://www.instagram.com) --> Update*  
+*Dashboard --> Pages --> Main Page --> General information --> Facebook = [Facebook](https://www.facebook.com) --> Update*  
+*Dashboard --> Pages --> Main Page --> General information --> Youtube = [Youtube](https://www.youtube.com) --> Update*  
 
 #### Our team
-Also create a possibility to replace the team image through the dashboard:  
+Also create a possibility to replace team image through *Dashboard*:  
 
 *Dashboard --> Custom Fields --> Add New --> Add Title = Our team --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Team Image --> Field Name = team_image --> Field Type = Image --> Required? = Yes --> Return Format = Image Array --> Preview Size = Full Size --> Publish*  
 
@@ -278,7 +278,7 @@ Replace *img class="specialists__img"* with the next one:
 #### Alert
 *Dashboard --> Custom Fields --> Add New --> Add Title = Alert --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Text Alert --> Field Name = text_alert --> Field Type = Text Area --> Required? = Yes --> Rows = 8 --> New lines = Automatically add br --> Publish*  
 
-Replace the code inside *div class="products__alert"* with the next one:  
+Replace code inside *div class="products__alert"* with the next one:  
 ```
 // index.php
 <?php the_field('text_alert'); ?>
@@ -287,7 +287,7 @@ Replace the code inside *div class="products__alert"* with the next one:
 *Dashboard --> Pages --> Main Page --> Alert --> Text Alert = Eget gravida cum sociis natoque. Elementum nibh tellus molestie nunc. Viverra nibh cras pulvinar mattis nunc sed. In metus vulputate eu scelerisque felis imperdiet proin. --> Update*  
 
 #### Our History
-In the same way we replace the headings, text fields and images of this section of the site. For example, I will give you a sequence of actions for one of the blocks:  
+In the same way we replace headings, text fields and images of this section of site. For example, I will give you a sequence of actions for one of blocks:  
 
 *Dashboard --> Custom Fields --> Add New --> Add Title = Our history --> Location --> Show this field group if = Page --> is equal to + Main Page --> Add Field --> Field Label = Title 1 --> Field Name = title_1 --> Field Type = Text --> Required? = Yes --> Publish*  
 
@@ -295,13 +295,13 @@ In the same way we replace the headings, text fields and images of this section 
 
 *Dashboard --> Custom Fields --> Our history --> Add Field --> Field Label = Image 1 --> Field Name = image_1 --> Field Type = Image --> Required? = Yes --> Return Format = Image URL --> Preview Size = Full Size --> Update*  
 
-Replace the code inside *div class="subtitle"*:  
+Replace code inside *div class="subtitle"*:  
 ```
 // index.php
 <?php the_field('title_1'); ?>
 ```
 
-Replace the code inside *div class="aboutus__text"*:  
+Replace code inside *div class="aboutus__text"*:  
 ```
 // index.php
 <?php the_field('description_1'); ?>
@@ -320,9 +320,9 @@ Replace *img class="aboutus__img" src="<?php echo bloginfo('template_url'); ?>/a
 
 *Dashboard --> Pages --> Main Page --> Our history --> Image 1 --> Add Image --> Upload Files --> Select Files = img/about_1.jpg --> Update*  
 
-*Tip:* Use the "duplicate" option for similar fields.  
+*Tip:* Use *duplicate* option for similar fields.  
 
-Similarly, we create the *Contacts* page and make the *Address* field available for editing from the dashboard.  
+Similarly, we create *Contacts* page and make *Address* field available for editing from *Dashboard*.  
 
 ### Dynamic output/display of posts
 Let's create next categories:  
@@ -455,7 +455,7 @@ Change part of the previous code as follows:
 </div>
 ```
 
-Fill in the slides that we have with different parameters on the example of one of them:  
+Fill in slides that we have with different parameters (on example of one of them):  
 
 *Dashboard --> Posts --> Dreams Come True --> Add image --> Upload Image --> Select Files --> img/bg_1 --> Select --> Text Color = dark --> Button = on --> Resourse Link = https://github.com/sudexp/wordpress-tutorial --> Update*  
 
@@ -523,7 +523,7 @@ In the same way, dynamically change Product Line 2.
 Finally, remove unnecessary code with static products.  
 
 ### Working with forms
-Install and activate Contact Form 7 plugin:  
+Install and activate *Contact Form 7* plugin:  
 
 *Dashboard --> Plugins --> Add New = Contact Form 7 + Install Now + Activate*
 *Dashboard --> Contact --> Contact Form 1 --> Title = Feedback form*
@@ -582,7 +582,7 @@ This e-mail was sent from a contact form on Company Portfolio Page (http://local
 
 Save it and click the *Messages* edit messages used in various situations to your choice.  
 
-Finally save all changes on the page using the *Save* button in the upper right corner, copy shortcode and paste it into *index.php* instead of *form class="contacts__feed"*:  
+Finally save all changes on the page using *Save* button in the upper right corner, copy shortcode and paste it into *index.php* instead of *form class="contacts__feed"*:  
 
 ```
 // index.php
@@ -591,10 +591,10 @@ Finally save all changes on the page using the *Save* button in the upper right 
 </div>
 ```
 
-In a similar way, change form of the tooltip.  
+Similarly, change the form of our tooltip.  
 
 ### Google Maps
-Follow the instructions of [Get an API Key](https://developers.google.com/maps/documentation/embed/get-api-key) to get Api Key you need to activate Google Maps.
+Follow the instructions of [Get an API Key](https://developers.google.com/maps/documentation/embed/get-api-key) to get API Key you need to activate Google Maps.
 
 *Dashboard --> Plugins --> Add New = WP Google Maps + Install Now + Activate*  
 *Dashboard --> Maps --> Skip intro and create a map*  
@@ -630,9 +630,9 @@ And add another one instead:
 </div>
 ```
 
-Save the map settings and go to the site web-page. As you can see, map appears, but immediately disappears, throwing an error. The fact is that Google maps have recently become paid and are not displayed with free API keys.  
+Save the map settings and go to the site web-page. As you can see, the map appears, but immediately disappears, throwing an error. The fact is that Google maps have recently become paid and are not displayed with free API keys.  
 
-I don't think the customer of our site will often have to change the company address, so I will return the static map code back.  
+I don't think the customer of our site will often have to change the company address, so I will return the static map code.  
 
 ### Transformation the project into a multi-page
 In the root folder *my_theme*, create a folder called *templates*, where the following page templates will be created:
@@ -663,8 +663,8 @@ In *page-team.php* create the following code:
         <?php
           $image = get_field('team_image');
           if (!empty($image)): ?>
-              <img 
-              src="<?php echo $image['url']; ?>" 
+              <img
+              src="<?php echo $image['url']; ?>"
               alt="<?php echo $image['alt']; ?>"
               class="specialists__img">
           <?php endif;
@@ -705,13 +705,13 @@ Now let's start creating pages:
 *Dashboard --> Pages --> Add New --> Add Tittle = Our history --> Template --> Default template = Our history --> Publish*  
 *Dashboard --> Pages --> Add New --> Add Tittle = Contacts and feedback --> Template --> Default template = Contacts and feedback --> Publish*  
 
-Refresh dashboard.  
+Refresh Dashboard.  
 
 *Dashboard --> Custom fields --> Our team --> Location --> change Main Page to Our Team --> Update*  
 *Dashboard --> Custom fields --> Our history --> Location --> change Main Page to Our History --> Update*  
 *Dashboard --> Custom fields --> Contacts --> Location --> change Main Page to Contacts and feedback --> Update*  
 
-Re-fill the created pages with information, refresh [main page](http://localhost:8888/wordpress-tutorial/) and watch the changes. Also you can test pages [our team](http://localhost:8888/wordpress-tutorial/our-team/), [products](http://localhost:8888/wordpress-tutorial/products/), [our history](http://localhost:8888/wordpress-tutorial/our-history/), [contacts and feedback](http://localhost:8888/wordpress-tutorial/contacts-and-feedback/). So far there is no other way to check if the pages are working, except through url, as navigation is not working at the moment.  
+Re-fill the created pages with information, refresh [main page](http://localhost:8888/wordpress-tutorial/) and watch the changes. Also you can test pages [our team](http://localhost:8888/wordpress-tutorial/our-team/), [products](http://localhost:8888/wordpress-tutorial/products/), [our history](http://localhost:8888/wordpress-tutorial/our-history/), [contacts and feedback](http://localhost:8888/wordpress-tutorial/contacts-and-feedback/). So far there is no other way to check if the pages are working, except through URL, as navigation is not working at the moment.  
 
 ### Formation of dynamic navigation
 Activate the navigation menus in *functions.php*:  
@@ -740,7 +740,7 @@ Replace the contents of *nav class="row" data-slide="1"* with this:
 
 Configure each of the navigation menu items and place them in the desired order by dragging and dropping them and then press *Publish*.  
 
-Now it is important to return the correct class attributes for normal display of navigation elements on the page.  
+Now it is important to return a correct class attributes for normal display of navigation elements on the page.  
 ```
 // functions.php
   // a hook to catch all the attributes of dynamic links
@@ -756,3 +756,196 @@ Now it is important to return the correct class attributes for normal display of
     return $atts;
   }
 ```
+
+### Displaying all single posts
+Go to (https://underscores.me)[https://underscores.me], enter any name in *Field Name* and generate a template for the base theme.  
+Copy *template-parts* folder and the *single.php* file from the topic to the *my_theme* directory.  
+
+Change the *single.php* to this:
+```
+// single.php
+<?php
+  get_header();
+?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			get_template_part( 'template-parts/content', get_post_type() );
+		endwhile; // End of the loop.
+		?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+  get_footer();
+?>
+```
+
+Check that a single post, for example [Product 1](http://localhost:8888/wordpress-tutorial/product_line_1/product-1/), is already displayed in browser.  
+
+To display the content of an individual post correctly, edit *template/parts/content.php* as follows:  
+```
+// content.php
+<div class="container products">
+  <h2 class="subtitle"><?php the_title(); ?></h2>
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="entry-content">
+      <?php
+      the_content( sprintf(
+        wp_kses(
+          /* translators: %s: Name of current post. Only visible to screen readers */
+          __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'my_theme' ),
+          array(
+            'span' => array(
+              'class' => array(),
+            ),
+          )
+        ),
+        get_the_title()
+      ) );
+      wp_link_pages( array(
+        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'my_theme' ),
+        'after'  => '</div>',
+      ) );
+      ?>
+    </div><!-- .entry-content -->
+  </article><!-- #post-<?php the_ID(); ?> -->
+</div>
+```
+
+Edit posts with Dashboard editor:  
+*Dashboard --> Posts --> Product 1 --> Add block = Image --> Upload --> Media Library --> product_1.jpg --> Select --> Align Center --> Update --> Add block --> Paragraph --> Add some text --> Update*  
+
+Fill in the rest of products in the same way.  
+
+To implement a widget of recommended products, change single post file as follows:  
+```
+// single.php
+<?php
+  get_header();
+?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			get_template_part( 'template-parts/content', get_post_type() );
+		endwhile; // End of the loop.
+		?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+    <div class="container products">
+    <h2 class="subtitle">Maybe you will like it</h2>
+    <div class="products__wrapper">
+      <?php
+        // default settings
+        $posts = get_posts( array(
+          'numberposts' => 3,
+          'category_name' => 'product_line_1',
+          'orderby'     => 'date',
+          'order'       => 'ASC',
+          'post_type'   => 'post',
+          'suppress_filters' => true,
+        ) );
+        foreach( $posts as $post ){
+          setup_postdata($post);
+      ?>
+      <div
+        class="products__item"
+        style="background-image: url(<?php
+        if (has_post_thumbnail()) {
+          the_post_thumbnail_url();
+        } else {
+          echo get_template_directory_uri() . '/assets/img/not_found.png';
+        }
+        ?>)"
+      >
+        <div class="products__item-info">
+          <div class="products__item-title"><?php the_title(); ?></div>
+          <div class="products__item-descr">
+            <?php the_field('product_description') ?>
+          </div>
+          <div class="minibutton products__trigger">More details</div>
+        </div>
+      </div>
+      <?php
+        }
+        wp_reset_postdata(); // reset
+      ?>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="products__alert">
+          <span>Didn't find what you are looking for?</span>
+          <?php the_field('text_alert'); ?>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<?php
+  get_footer();
+?>
+```
+
+Now we will dynamically create a link to the product. In *page-products.php* and *single.php* files, replace all *div class="minibutton products__trigger "* with links:  
+```
+// *page-products.php*, *single.php*
+<a href="<?php echo get_permalink(); ?>" class="minibutton products__trigger">More details</a>
+```
+
+Finally, add activity class for *Products* link in navigation menu when opening a particular item product. To do this, use print_r() function to *filter_nav_menu_link_attributes* function:  
+```
+// functions.php
+...
+function filter_nav_menu_link_attributes($atts, $item, $args) {
+    if ($args->menu === 'Main') {
+      $atts['class'] = 'header__nav-item';
+      // activity class
+      if ($item->current) {
+        $atts['class'] .= ' header__nav-item-active'; // concat classes
+      }
+      print_r($item);
+    }
+    return $atts;
+  }
+```
+
+And refresh your browser. Using *cmd + F* (Mac OS) or *ctrl + F* (Windows) search command, find the *[ID]* corresponding to *Products* (in my case, it is the second *ID=180*, as *Products* link is the second in order).  
+
+Replace *print_r* function with the following code:  
+```
+// functions.php
+...
+if ( $item->ID === 180 && ( in_category( 'product_line_1' ) || in_category( 'product_line_2' ))){ // 180 = your ID
+      $atts['class'] .= ' header__nav-item-active';
+  }
+```
+
+### Final steps
+Take a screenshot of the home page, name it *screenshot.png* and move it to the root directory *my_theme*. *WordPress* will automatically set theme appearance:  
+
+*Dashboard --> Appearance --> Themes*  
+
+There you can also create some *404.php* file to redirect users from non-existent paths to home page:  
+```
+// 404.php
+<?php
+  get_header();
+?>
+
+<div class="container products">
+<div class="products__alert">There's no such page.</div>
+  <h2 class="subtitle">
+    <a href="<?php echo get_home_url(); ?>">
+      <-- Go back
+    </a>
+  </h2>
+</div>
+```
+

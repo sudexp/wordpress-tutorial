@@ -83,7 +83,7 @@
                   alt="email"
                   class="header__contacts-logo"
                 />
-                <a href="<?php the_field('email', 2); ?>" class="header__contacts-mail"><?php the_field('email', 2); ?></a>
+                <a href="mailto:<?php the_field('email', 2); ?>"><?php the_field('email', 2); ?></a>
               </div>
               <div class="header__contacts-item">
                 <img
@@ -92,8 +92,8 @@
                   class="header__contacts-logo"
                 />
                 <div class="header__contacts-tel">
-                  <a href="<?php the_field('phone_1', 2); ?>" class="header__contacts-tel"><?php the_field('phone_1', 2); ?></a>
-                  <a href="<?php the_field('phone_2', 2); ?>" class="header__contacts-tel"><?php the_field('phone_2', 2); ?></a>
+                  <a href="tel:<?php the_field('phone_1', 2); ?>"><?php the_field('phone_1', 2); ?></a>
+                  <a href="tel:<?php the_field('phone_2', 2); ?>"><?php the_field('phone_2', 2); ?></a>
                 </div>
               </div>
               <div class="header__contacts-item">
